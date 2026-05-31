@@ -32,6 +32,75 @@
       min-height: 100vh;
     }
 
+    /* ── TRANSLATION NOTICE ── */
+    .translation-notice {
+      display: none;
+      background: #FEF9EC;
+      border-bottom: 1px solid #F0D78A;
+      padding: 12px 24px;
+    }
+    .translation-notice.visible { display: block; }
+    .translation-notice-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+      color: #5A4A1A;
+      line-height: 1.6;
+    }
+    .translation-notice-inner .t-icon {
+      font-size: 15px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ── LANGUAGE BAR ── */
+    .lang-bar {
+      background: var(--ink);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      padding: 0 24px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 4px;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .lang-bar-inner {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      flex-wrap: wrap;
+      padding: 8px 0;
+      max-width: 760px;
+      width: 100%;
+      justify-content: flex-end;
+    }
+    .lang-btn {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 100px;
+      padding: 4px 11px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11.5px;
+      font-weight: 400;
+      color: rgba(247,244,239,.65);
+      cursor: pointer;
+      transition: all .15s;
+      white-space: nowrap;
+    }
+    .lang-btn:hover { background: rgba(255,255,255,.08); color: #F7F4EF; }
+    .lang-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+      font-weight: 500;
+    }
+
     /* ── HEADER ── */
     header {
       background: var(--ink);
@@ -48,11 +117,7 @@
                   radial-gradient(ellipse 50% 40% at -10% -10%, #D4A84322, transparent);
       pointer-events: none;
     }
-    .header-inner {
-      max-width: 760px;
-      margin: 0 auto;
-      position: relative;
-    }
+    .header-inner { max-width: 760px; margin: 0 auto; position: relative; }
     .app-label {
       display: inline-block;
       font-family: 'DM Sans', sans-serif;
@@ -72,12 +137,7 @@
       color: #F7F4EF;
       margin-bottom: 24px;
     }
-    .meta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 8px;
-    }
+    .meta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
     .meta-pill {
       background: rgba(255,255,255,.08);
       border: 1px solid rgba(255,255,255,.14);
@@ -101,18 +161,10 @@
       font-style: italic;
       letter-spacing: .01em;
     }
-    .zero-banner span {
-      font-style: normal;
-      font-weight: 600;
-      letter-spacing: .04em;
-    }
+    .zero-banner span { font-style: normal; font-weight: 600; letter-spacing: .04em; }
 
     /* ── LAYOUT ── */
-    .page {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 56px 24px 80px;
-    }
+    .page { max-width: 760px; margin: 0 auto; padding: 56px 24px 80px; }
 
     /* ── TOC ── */
     .toc {
@@ -131,14 +183,8 @@
       color: var(--muted);
       margin-bottom: 16px;
     }
-    .toc ol {
-      list-style: none;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6px 24px;
-    }
+    .toc ol { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 24px; }
     @media (max-width: 540px) { .toc ol { grid-template-columns: 1fr; } }
-    .toc li { counter-increment: toc-item; }
     .toc a {
       text-decoration: none;
       color: var(--ink);
@@ -150,18 +196,10 @@
       transition: color .15s;
     }
     .toc a:hover { color: var(--accent); }
-    .toc a .num {
-      color: var(--accent);
-      font-family: 'Fraunces', serif;
-      font-size: 11px;
-      min-width: 18px;
-    }
+    .toc a .num { color: var(--accent); font-family: 'Fraunces', serif; font-size: 11px; min-width: 18px; }
 
     /* ── SECTIONS ── */
-    section {
-      margin-bottom: 52px;
-      scroll-margin-top: 24px;
-    }
+    section { margin-bottom: 52px; scroll-margin-top: 80px; }
     .section-head {
       display: flex;
       align-items: baseline;
@@ -170,13 +208,7 @@
       padding-bottom: 14px;
       border-bottom: 1px solid var(--border);
     }
-    .section-num {
-      font-family: 'Fraunces', serif;
-      font-size: 1rem;
-      color: var(--accent);
-      font-weight: 300;
-      min-width: 28px;
-    }
+    .section-num { font-family: 'Fraunces', serif; font-size: 1rem; color: var(--accent); font-weight: 300; min-width: 28px; }
     .section-head h2 {
       font-family: 'Fraunces', serif;
       font-size: clamp(1.15rem, 2.5vw, 1.45rem);
@@ -187,13 +219,10 @@
 
     p { margin-bottom: 14px; color: var(--ink); }
     p:last-child { margin-bottom: 0; }
-
     strong { font-weight: 500; color: var(--ink); }
-
     a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
     a:hover { color: #1d4a35; }
 
-    /* ── CALLOUT ── */
     .callout {
       background: var(--chip-bg);
       border-left: 3px solid var(--accent);
@@ -204,182 +233,109 @@
     }
     .callout p { margin-bottom: 6px; }
 
-    /* ── LISTS ── */
-    ul.clean {
-      list-style: none;
-      margin: 10px 0 14px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-    ul.clean li {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 15px;
-      color: var(--ink);
-    }
-    ul.clean li::before {
-      content: '✕';
-      color: #c0392b;
-      font-size: 11px;
-      margin-top: 5px;
-      flex-shrink: 0;
-      font-weight: 700;
-    }
-    ul.clean.check li::before {
-      content: '✓';
-      color: var(--accent);
-      font-size: 12px;
-    }
-    ul.clean.neutral li::before {
-      content: '·';
-      color: var(--accent2);
-      font-size: 18px;
-      margin-top: 1px;
-    }
+    ul.clean { list-style: none; margin: 10px 0 14px; display: flex; flex-direction: column; gap: 6px; }
+    ul.clean li { display: flex; align-items: flex-start; gap: 10px; font-size: 15px; color: var(--ink); }
+    ul.clean li::before { content: '✕'; color: #c0392b; font-size: 11px; margin-top: 5px; flex-shrink: 0; font-weight: 700; }
+    ul.clean.check li::before { content: '✓'; color: var(--accent); font-size: 12px; }
+    ul.clean.neutral li::before { content: '·'; color: var(--accent2); font-size: 18px; margin-top: 1px; }
 
-    /* ── COUNTRY GRID ── */
-    .country-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 12px;
-      margin: 16px 0;
-    }
-    .country-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 14px 16px;
-    }
+    .country-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; margin: 16px 0; }
+    .country-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; }
     .country-card .flag { font-size: 20px; margin-bottom: 6px; display: block; }
     .country-card .region { font-weight: 500; font-size: 13.5px; margin-bottom: 3px; }
     .country-card .law { font-size: 12px; color: var(--accent); font-weight: 500; letter-spacing: .03em; }
     .country-card .desc { font-size: 12.5px; color: var(--muted); margin-top: 4px; line-height: 1.5; }
 
-    /* ── NOTICE BOX ── */
-    .notice {
-      background: #FEF9EC;
-      border: 1px solid #F0D78A;
-      border-radius: 12px;
-      padding: 18px 22px;
-      margin: 16px 0;
-      font-size: 14px;
-      line-height: 1.65;
-      color: #5A4A1A;
-    }
+    .notice { background: #FEF9EC; border: 1px solid #F0D78A; border-radius: 12px; padding: 18px 22px; margin: 16px 0; font-size: 14px; line-height: 1.65; color: #5A4A1A; }
     .notice strong { color: #3D3010; }
 
-    /* ── CONTACT CARD ── */
-    .contact-card {
-      background: var(--ink);
-      color: #F7F4EF;
-      border-radius: 16px;
-      padding: 32px 36px;
-      margin-top: 16px;
-    }
+    .contact-card { background: var(--ink); color: #F7F4EF; border-radius: 16px; padding: 32px 36px; margin-top: 16px; }
     .contact-card p { color: rgba(247,244,239,.75); font-size: 15px; margin-bottom: 16px; }
-    .contact-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 8px;
-      font-size: 14.5px;
-    }
-    .contact-row .label {
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--accent2);
-      min-width: 64px;
-    }
+    .contact-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; font-size: 14.5px; }
+    .contact-row .label { font-size: 11px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--accent2); min-width: 64px; }
     .contact-row .value { color: #F7F4EF; }
     .contact-row a { color: var(--accent2); }
 
-    /* ── FOOTER ── */
-    footer {
-      background: var(--ink);
-      color: rgba(247,244,239,.45);
-      padding: 32px 24px;
-      text-align: center;
-      font-size: 12px;
-      line-height: 1.8;
-    }
+    footer { background: var(--ink); color: rgba(247,244,239,.45); padding: 32px 24px; text-align: center; font-size: 12px; line-height: 1.8; }
     footer a { color: rgba(247,244,239,.6); }
+
+    /* Hide all language sections by default */
+    .lang-section { display: none; }
+    .lang-section.active { display: block; }
   </style>
 </head>
 <body>
 
+<!-- LANGUAGE BAR -->
+<nav class="lang-bar" aria-label="Language selector">
+  <div class="lang-bar-inner">
+    <button class="lang-btn active" onclick="switchLang('en')">English</button>
+    <button class="lang-btn" onclick="switchLang('de')">Deutsch</button>
+    <button class="lang-btn" onclick="switchLang('fr')">Français</button>
+    <button class="lang-btn" onclick="switchLang('pt')">Português</button>
+    <button class="lang-btn" onclick="switchLang('ko')">한국어</button>
+    <button class="lang-btn" onclick="switchLang('zh')">中文</button>
+    <button class="lang-btn" onclick="switchLang('es')">Español</button>
+    <button class="lang-btn" onclick="switchLang('ja')">日本語</button>
+    <button class="lang-btn" onclick="switchLang('it')">Italiano</button>
+  </div>
+</nav>
+
+<div class="translation-notice" id="translation-notice" role="note" aria-live="polite">
+  <div class="translation-notice-inner">
+    <span class="t-icon">ℹ️</span>
+    <span id="translation-notice-text">This translation was generated automatically from the original English version and is provided for convenience only. The English version is the authoritative text. We apologise for any grammatical or formal language imprecision.</span>
+  </div>
+</div>
+
 <header>
   <div class="header-inner">
     <span class="app-label">Joju · iOS</span>
-    <h1>Privacy Policy</h1>
+    <h1 id="header-title">Privacy Policy</h1>
     <div class="meta-row">
-      <span class="meta-pill">Last Updated: May 31, 2026 </span>
-      <span class="meta-pill">Effective: May 31, 2026 </span>
+      <span class="meta-pill" id="pill-updated">Last Updated: May 31, 2026</span>
+      <span class="meta-pill" id="pill-effective">Effective: May 31, 2026</span>
       <span class="meta-pill">iOS Only</span>
       <span class="meta-pill">Worldwide</span>
     </div>
   </div>
 </header>
 
-<div class="zero-banner">
+<div class="zero-banner" id="zero-banner">
   <span>We collect nothing.</span> &nbsp;We store nothing. &nbsp;We transmit nothing.
 </div>
 
+<!-- ═══════════════════════════════════════════════════════ ENGLISH -->
+<div class="lang-section active" id="lang-en">
 <main class="page">
-
-  <!-- TABLE OF CONTENTS -->
   <nav class="toc" aria-label="Table of contents">
     <div class="toc-title">Contents</div>
     <ol>
-      <li><a href="#s1"><span class="num">01</span>Introduction</a></li>
-      <li><a href="#s2"><span class="num">02</span>The Short Version</a></li>
-      <li><a href="#s3"><span class="num">03</span>Data Collection</a></li>
-      <li><a href="#s4"><span class="num">04</span>On-Device AI Processing</a></li>
-      <li><a href="#s5"><span class="num">05</span>Apple Platform &amp; Crash Reports</a></li>
-      <li><a href="#s6"><span class="num">06</span>Third-Party Services</a></li>
-      <li><a href="#s7"><span class="num">07</span>Children's Privacy</a></li>
-      <li><a href="#s8"><span class="num">08</span>Advertising</a></li>
-      <li><a href="#s9"><span class="num">09</span>In-App Purchases</a></li>
-      <li><a href="#s10"><span class="num">10</span>Data Security</a></li>
-      <li><a href="#s11"><span class="num">11</span>International Compliance</a></li>
-      <li><a href="#s12"><span class="num">12</span>Your Rights</a></li>
-      <li><a href="#s13"><span class="num">13</span>Data Retention</a></li>
-      <li><a href="#s14"><span class="num">14</span>Policy Changes</a></li>
-      <li><a href="#s15"><span class="num">15</span>Contact Us</a></li>
+      <li><a href="#en-s1"><span class="num">01</span>Introduction</a></li>
+      <li><a href="#en-s2"><span class="num">02</span>The Short Version</a></li>
+      <li><a href="#en-s3"><span class="num">03</span>Data Collection</a></li>
+      <li><a href="#en-s4"><span class="num">04</span>On-Device AI Processing</a></li>
+      <li><a href="#en-s5"><span class="num">05</span>Apple Platform &amp; Crash Reports</a></li>
+      <li><a href="#en-s6"><span class="num">06</span>Third-Party Services</a></li>
+      <li><a href="#en-s7"><span class="num">07</span>Children's Privacy</a></li>
+      <li><a href="#en-s8"><span class="num">08</span>Advertising</a></li>
+      <li><a href="#en-s9"><span class="num">09</span>In-App Purchases</a></li>
+      <li><a href="#en-s10"><span class="num">10</span>Data Security</a></li>
+      <li><a href="#en-s11"><span class="num">11</span>International Compliance</a></li>
+      <li><a href="#en-s12"><span class="num">12</span>Your Rights</a></li>
+      <li><a href="#en-s13"><span class="num">13</span>Data Retention</a></li>
+      <li><a href="#en-s14"><span class="num">14</span>Policy Changes</a></li>
+      <li><a href="#en-s15"><span class="num">15</span>Contact Us</a></li>
     </ol>
   </nav>
-
-  <!-- S1 -->
-  <section id="s1">
-    <div class="section-head">
-      <span class="section-num">01</span>
-      <h2>Introduction</h2>
-    </div>
+  <section id="en-s1"><div class="section-head"><span class="section-num">01</span><h2>Introduction</h2></div>
     <p>Joju ("the App," "we," "our," or "us") is committed to protecting your privacy — and the privacy of children who use the App. This Privacy Policy explains how Joju handles information in connection with your use of the App, available exclusively on the Apple App Store for iPhone and iPad.</p>
     <p>Please read this policy carefully. By downloading or using the App, you acknowledge that you have read and understood this Privacy Policy.</p>
   </section>
-
-  <!-- S2 -->
-  <section id="s2">
-    <div class="section-head">
-      <span class="section-num">02</span>
-      <h2>The Short Version</h2>
-    </div>
-    <div class="callout">
-      <p><strong>We collect nothing. We store nothing. We transmit nothing.</strong></p>
-      <p>Joju is a children's application that operates entirely on your device using on-device AI models. All processing — including all AI-powered features — happens locally on your iPhone or iPad. No data of any kind is ever sent to us, to any server, or to any third party.</p>
-    </div>
+  <section id="en-s2"><div class="section-head"><span class="section-num">02</span><h2>The Short Version</h2></div>
+    <div class="callout"><p><strong>We collect nothing. We store nothing. We transmit nothing.</strong></p><p>Joju is a children's application that operates entirely on your device using on-device AI models. All processing — including all AI-powered features — happens locally on your iPhone or iPad. No data of any kind is ever sent to us, to any server, or to any third party.</p></div>
   </section>
-
-  <!-- S3 -->
-  <section id="s3">
-    <div class="section-head">
-      <span class="section-num">03</span>
-      <h2>Data Collection</h2>
-    </div>
+  <section id="en-s3"><div class="section-head"><span class="section-num">03</span><h2>Data Collection</h2></div>
     <p><strong>We do not collect any personal data — from children or adults.</strong></p>
     <p>Joju does not collect, access, store, transmit, share, or process any of the following:</p>
     <ul class="clean">
@@ -395,13 +351,7 @@
       <li>Identifiers for advertising (IDFA or similar)</li>
     </ul>
   </section>
-
-  <!-- S4 -->
-  <section id="s4">
-    <div class="section-head">
-      <span class="section-num">04</span>
-      <h2>How the App Works — On-Device AI Processing Only</h2>
-    </div>
+  <section id="en-s4"><div class="section-head"><span class="section-num">04</span><h2>How the App Works — On-Device AI Processing Only</h2></div>
     <p>All functionality of Joju, including all artificial intelligence and machine learning features, is performed entirely on your device using Apple's on-device frameworks (such as Core ML). This means:</p>
     <ul class="clean check">
       <li><strong>All AI models run locally</strong> on your device — no input or output is sent to any external server or AI provider.</li>
@@ -412,32 +362,12 @@
     </ul>
     <p>Any content generated or processed by the App remains exclusively on your device and is fully under your control.</p>
   </section>
-
-  <!-- S5 -->
-  <section id="s5">
-    <div class="section-head">
-      <span class="section-num">05</span>
-      <h2>Apple Platform Services &amp; Crash Reporting</h2>
-    </div>
+  <section id="en-s5"><div class="section-head"><span class="section-num">05</span><h2>Apple Platform Services &amp; Crash Reporting</h2></div>
     <p>As an app distributed through the Apple App Store, Joju is subject to Apple's standard iOS platform services. There are two important things to be aware of:</p>
-
-    <div class="notice">
-      <p><strong>Crash Reports (Optional — Device-Level Setting)</strong></p>
-      <p>Apple's iOS includes an optional system-level feature that can send anonymous crash reports to app developers when an app crashes. Whether this data is shared is controlled entirely by you (or the device owner) through your iPhone or iPad settings under <strong>Settings → Privacy &amp; Security → Analytics &amp; Improvements</strong>. If this setting is enabled on your device, Apple may share anonymized diagnostic crash data with us solely for the purpose of identifying and fixing technical issues. This data does not contain any personal information and is governed by <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>. If this setting is disabled, no crash data is shared with us.
-      </p>
-    </div>
-
-    <p><strong>App Store &amp; In-App Purchases</strong><br>
-    Apple independently collects information related to App Store downloads and any in-app purchases in accordance with <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>. We do not receive or have access to payment or personal information associated with these transactions.</p>
-    <p>We do not have control over or access to any other data Apple may collect independently through iOS system functions.</p>
+    <div class="notice"><p><strong>Crash Reports (Optional — Device-Level Setting)</strong></p><p>Apple's iOS includes an optional system-level feature that can send anonymous crash reports to app developers when an app crashes. Whether this data is shared is controlled entirely by you through <strong>Settings → Privacy &amp; Security → Analytics &amp; Improvements</strong>. If enabled, Apple may share anonymized diagnostic crash data with us solely for fixing technical issues. This data does not contain any personal information and is governed by <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>.</p></div>
+    <p><strong>App Store &amp; In-App Purchases</strong><br>Apple independently collects information related to App Store downloads and in-app purchases per <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>. We do not receive or have access to payment or personal information associated with these transactions.</p>
   </section>
-
-  <!-- S6 -->
-  <section id="s6">
-    <div class="section-head">
-      <span class="section-num">06</span>
-      <h2>Third-Party Services</h2>
-    </div>
+  <section id="en-s6"><div class="section-head"><span class="section-num">06</span><h2>Third-Party Services</h2></div>
     <p>Joju does <strong>not</strong> integrate any third-party services that collect or transmit user data. Specifically, the App contains <strong>no</strong>:</p>
     <ul class="clean">
       <li>Third-party analytics SDKs (e.g., Firebase, Mixpanel, Amplitude)</li>
@@ -449,148 +379,1107 @@
       <li>Any other third-party SDK that accesses or transmits user data</li>
     </ul>
   </section>
-
-  <!-- S7 -->
-  <section id="s7">
-    <div class="section-head">
-      <span class="section-num">07</span>
-      <h2>Children's Privacy — Our Highest Priority</h2>
-    </div>
+  <section id="en-s7"><div class="section-head"><span class="section-num">07</span><h2>Children's Privacy — Our Highest Priority</h2></div>
     <p>Joju is designed specifically for children, and their privacy is our foremost concern. We fully comply with the following children's privacy laws on a global basis:</p>
-
     <div class="country-grid">
-      <div class="country-card">
-        <span class="flag">🇺🇸</span>
-        <div class="region">United States</div>
-        <div class="law">COPPA</div>
-        <div class="desc">No personal information collected from children under 13.</div>
-      </div>
-      <div class="country-card">
-        <span class="flag">🇪🇺</span>
-        <div class="region">European Union / EEA</div>
-        <div class="law">GDPR Article 8</div>
-        <div class="desc">No personal information collected from children under 16 (or lower national threshold).</div>
-      </div>
-      <div class="country-card">
-        <span class="flag">🇬🇧</span>
-        <div class="region">United Kingdom</div>
-        <div class="law">UK GDPR · Children's Code</div>
-        <div class="desc">Highest standard of privacy protection applied by default for all child users.</div>
-      </div>
-      <div class="country-card">
-        <span class="flag">🇨🇦</span>
-        <div class="region">Canada</div>
-        <div class="law">PIPEDA</div>
-        <div class="desc">No personal information collected from minors without verified parental consent.</div>
-      </div>
-      <div class="country-card">
-        <span class="flag">🇦🇺</span>
-        <div class="region">Australia</div>
-        <div class="law">Privacy Act 1988</div>
-        <div class="desc">Privacy-by-design standards protecting all users, including children.</div>
-      </div>
-      <div class="country-card">
-        <span class="flag">🇧🇷</span>
-        <div class="region">Brazil</div>
-        <div class="law">LGPD</div>
-        <div class="desc">No personal data of children processed without parental or guardian consent.</div>
-      </div>
+      <div class="country-card"><span class="flag">🇺🇸</span><div class="region">United States</div><div class="law">COPPA</div><div class="desc">No personal information collected from children under 13.</div></div>
+      <div class="country-card"><span class="flag">🇪🇺</span><div class="region">European Union / EEA</div><div class="law">GDPR Article 8</div><div class="desc">No personal information collected from children under 16 (or lower national threshold).</div></div>
+      <div class="country-card"><span class="flag">🇬🇧</span><div class="region">United Kingdom</div><div class="law">UK GDPR · Children's Code</div><div class="desc">Highest standard of privacy protection applied by default for all child users.</div></div>
+      <div class="country-card"><span class="flag">🇨🇦</span><div class="region">Canada</div><div class="law">PIPEDA</div><div class="desc">No personal information collected from minors without verified parental consent.</div></div>
+      <div class="country-card"><span class="flag">🇦🇺</span><div class="region">Australia</div><div class="law">Privacy Act 1988</div><div class="desc">Privacy-by-design standards protecting all users, including children.</div></div>
+      <div class="country-card"><span class="flag">🇧🇷</span><div class="region">Brazil</div><div class="law">LGPD</div><div class="desc">No personal data of children processed without parental or guardian consent.</div></div>
     </div>
-
-    <div class="callout">
-      <p><strong>Protected by design.</strong> Because the App collects no data whatsoever, these protections are fulfilled automatically. There is no data to collect, share, or misuse — from any user, of any age, in any country.</p>
-    </div>
+    <div class="callout"><p><strong>Protected by design.</strong> Because the App collects no data whatsoever, these protections are fulfilled automatically. There is no data to collect, share, or misuse — from any user, of any age, in any country.</p></div>
     <p>Parents and guardians can use this App with complete confidence that no information about their child is collected or shared under any circumstances.</p>
   </section>
-
-  <!-- S8 -->
-  <section id="s8">
-    <div class="section-head">
-      <span class="section-num">08</span>
-      <h2>Advertising</h2>
-    </div>
+  <section id="en-s8"><div class="section-head"><span class="section-num">08</span><h2>Advertising</h2></div>
     <p>Joju contains <strong>no advertising of any kind.</strong> We do not display ads, and we do not use advertising identifiers. The App will never show advertisements to children.</p>
   </section>
-
-  <!-- S9 -->
-  <section id="s9">
-    <div class="section-head">
-      <span class="section-num">09</span>
-      <h2>In-App Purchases</h2>
-    </div>
+  <section id="en-s9"><div class="section-head"><span class="section-num">09</span><h2>In-App Purchases</h2></div>
     <p>If the App offers in-app purchases, these transactions are processed exclusively through Apple's App Store. We do not collect or process any payment information. All purchase records are handled solely by Apple in accordance with their terms and privacy policy.</p>
   </section>
-
-  <!-- S10 -->
-  <section id="s10">
-    <div class="section-head">
-      <span class="section-num">10</span>
-      <h2>Data Security</h2>
-    </div>
+  <section id="en-s10"><div class="section-head"><span class="section-num">10</span><h2>Data Security</h2></div>
     <p>Because we do not collect, store, or transmit any user data, there is no user data on our end to secure. All content generated within the App is protected by your device's built-in security features, including device passcode, Face ID, Touch ID, and iOS's application sandboxing architecture.</p>
   </section>
-
-  <!-- S11 -->
-  <section id="s11">
-    <div class="section-head">
-      <span class="section-num">11</span>
-      <h2>International Users &amp; Global Compliance</h2>
-    </div>
+  <section id="en-s11"><div class="section-head"><span class="section-num">11</span><h2>International Users &amp; Global Compliance</h2></div>
     <p>Joju is available worldwide. Because we collect no personal data from any user in any country, the data transfer, localization, and consent requirements of international privacy frameworks — including GDPR (EU/EEA), UK GDPR, CCPA/CPRA (California), PIPEDA (Canada), LGPD (Brazil), PDPA (Thailand/Singapore), POPIA (South Africa), and others — are satisfied by the App's zero-collection architecture.</p>
     <p>No personal data is transferred across borders because no personal data is collected in the first place.</p>
   </section>
-
-  <!-- S12 -->
-  <section id="s12">
-    <div class="section-head">
-      <span class="section-num">12</span>
-      <h2>Your Rights</h2>
-    </div>
+  <section id="en-s12"><div class="section-head"><span class="section-num">12</span><h2>Your Rights</h2></div>
     <p>Since we collect no personal data, there is no data subject to access, correction, deletion, portability, or restriction requests. Nonetheless, users in any jurisdiction retain the right to contact us with privacy-related concerns, and we will respond promptly.</p>
     <p><strong>For parents and guardians:</strong> You have full control over your child's use of the App through your device's Screen Time and parental controls features, available in iOS Settings.</p>
   </section>
-
-  <!-- S13 -->
-  <section id="s13">
-    <div class="section-head">
-      <span class="section-num">13</span>
-      <h2>Data Retention</h2>
-    </div>
+  <section id="en-s13"><div class="section-head"><span class="section-num">13</span><h2>Data Retention</h2></div>
     <p>We retain no user data — there is nothing to retain. All content generated within the App exists solely on your device. You can delete all App data at any time by uninstalling the App from your device.</p>
   </section>
-
-  <!-- S14 -->
-  <section id="s14">
-    <div class="section-head">
-      <span class="section-num">14</span>
-      <h2>Changes to This Privacy Policy</h2>
-    </div>
+  <section id="en-s14"><div class="section-head"><span class="section-num">14</span><h2>Changes to This Privacy Policy</h2></div>
     <p>We may update this Privacy Policy from time to time. Any changes will be reflected by updating the "Last Updated" date at the top of this policy. We encourage you to review this policy periodically.</p>
     <p>If we ever materially change our data practices — particularly in any way that involves collecting data from children — we will provide prominent advance notice and obtain verifiable parental consent where required by applicable law.</p>
   </section>
-
-  <!-- S15 -->
-  <section id="s15">
-    <div class="section-head">
-      <span class="section-num">15</span>
-      <h2>Contact Us</h2>
-    </div>
+  <section id="en-s15"><div class="section-head"><span class="section-num">15</span><h2>Contact Us</h2></div>
     <p>If you have any questions, concerns, or requests regarding this Privacy Policy — including any inquiries from parents or guardians — please contact us:</p>
     <div class="contact-card">
       <p>We aim to respond to all privacy inquiries within 30 days.</p>
-      <div class="contact-row">
-        <span class="label">Email</span>
-        <a href="mailto:GlabsAI@outlook.com" class="value">[GLabsAI@outlook.com]</a>
-      </div>
+      <div class="contact-row"><span class="label">Email</span><a href="mailto:GLabsAI@outlook.com" class="value">GLabsAI@outlook.com</a></div>
     </div>
   </section>
-
 </main>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ GERMAN -->
+<div class="lang-section" id="lang-de">
+<main class="page">
+  <nav class="toc" aria-label="Inhaltsverzeichnis">
+    <div class="toc-title">Inhalt</div>
+    <ol>
+      <li><a href="#de-s1"><span class="num">01</span>Einleitung</a></li>
+      <li><a href="#de-s2"><span class="num">02</span>Kurzfassung</a></li>
+      <li><a href="#de-s3"><span class="num">03</span>Datenerhebung</a></li>
+      <li><a href="#de-s4"><span class="num">04</span>KI-Verarbeitung auf dem Gerät</a></li>
+      <li><a href="#de-s5"><span class="num">05</span>Apple-Plattform &amp; Absturzberichte</a></li>
+      <li><a href="#de-s6"><span class="num">06</span>Drittanbieterdienste</a></li>
+      <li><a href="#de-s7"><span class="num">07</span>Datenschutz für Kinder</a></li>
+      <li><a href="#de-s8"><span class="num">08</span>Werbung</a></li>
+      <li><a href="#de-s9"><span class="num">09</span>In-App-Käufe</a></li>
+      <li><a href="#de-s10"><span class="num">10</span>Datensicherheit</a></li>
+      <li><a href="#de-s11"><span class="num">11</span>Internationale Compliance</a></li>
+      <li><a href="#de-s12"><span class="num">12</span>Ihre Rechte</a></li>
+      <li><a href="#de-s13"><span class="num">13</span>Datenspeicherung</a></li>
+      <li><a href="#de-s14"><span class="num">14</span>Änderungen der Richtlinie</a></li>
+      <li><a href="#de-s15"><span class="num">15</span>Kontakt</a></li>
+    </ol>
+  </nav>
+  <section id="de-s1"><div class="section-head"><span class="section-num">01</span><h2>Einleitung</h2></div>
+    <p>Joju („die App", „wir", „unser" oder „uns") ist dem Schutz Ihrer Privatsphäre – und der Privatsphäre von Kindern, die die App nutzen – verpflichtet. Diese Datenschutzrichtlinie erklärt, wie Joju mit Informationen im Zusammenhang mit Ihrer Nutzung der App umgeht, die ausschließlich im Apple App Store für iPhone und iPad erhältlich ist.</p>
+    <p>Bitte lesen Sie diese Richtlinie sorgfältig. Mit dem Herunterladen oder der Nutzung der App bestätigen Sie, dass Sie diese Datenschutzrichtlinie gelesen und verstanden haben.</p>
+  </section>
+  <section id="de-s2"><div class="section-head"><span class="section-num">02</span><h2>Kurzfassung</h2></div>
+    <div class="callout"><p><strong>Wir sammeln nichts. Wir speichern nichts. Wir übermitteln nichts.</strong></p><p>Joju ist eine Kinder-App, die vollständig auf Ihrem Gerät mit lokalen KI-Modellen arbeitet. Alle Verarbeitungsvorgänge – einschließlich aller KI-gestützten Funktionen – finden lokal auf Ihrem iPhone oder iPad statt. Es werden keinerlei Daten an uns, an Server oder an Dritte übertragen.</p></div>
+  </section>
+  <section id="de-s3"><div class="section-head"><span class="section-num">03</span><h2>Datenerhebung</h2></div>
+    <p><strong>Wir erheben keinerlei personenbezogene Daten – weder von Kindern noch von Erwachsenen.</strong></p>
+    <p>Joju erhebt, greift auf, speichert, übermittelt, teilt oder verarbeitet keine der folgenden Informationen:</p>
+    <ul class="clean">
+      <li>Persönliche Identifikatoren (Name, E-Mail-Adresse, Apple-ID, Geräte-ID usw.)</li>
+      <li>Standortdaten (genau oder ungefähr)</li>
+      <li>Nutzungsdaten oder Verhaltensanalysen</li>
+      <li>Diagnose- oder Absturzberichte an uns</li>
+      <li>Nutzergenerierte Inhalte</li>
+      <li>Fotos, Kamera- oder Mikrofoneingaben (sofern unten nicht ausdrücklich angegeben)</li>
+      <li>Kontakte, Kalender oder sonstige Gerätedaten</li>
+      <li>Gesundheits-, Finanz- oder biometrische Informationen</li>
+      <li>Browser- oder Suchverlauf</li>
+      <li>Werbekennungen (IDFA oder ähnliche)</li>
+    </ul>
+  </section>
+  <section id="de-s4"><div class="section-head"><span class="section-num">04</span><h2>Funktionsweise der App – Ausschließlich On-Device-KI-Verarbeitung</h2></div>
+    <p>Alle Funktionen von Joju, einschließlich aller Funktionen zur künstlichen Intelligenz und zum maschinellen Lernen, werden vollständig auf Ihrem Gerät mithilfe von Apples On-Device-Frameworks (z. B. Core ML) ausgeführt. Das bedeutet:</p>
+    <ul class="clean check">
+      <li><strong>Alle KI-Modelle laufen lokal</strong> auf Ihrem Gerät – keine Eingaben oder Ausgaben werden an externe Server oder KI-Anbieter gesendet.</li>
+      <li><strong>Keine Internetverbindung erforderlich</strong> für grundlegende App-Funktionen.</li>
+      <li><strong>Es werden keine Daten hochgeladen</strong> auf Server, Cloud-Dienste oder externe Endpunkte.</li>
+      <li><strong>Keine Kontoerstellung</strong> erforderlich oder möglich.</li>
+      <li><strong>Keine Daten verlassen Ihr Gerät</strong> durch die Nutzung dieser App.</li>
+    </ul>
+    <p>Alle von der App erzeugten oder verarbeiteten Inhalte verbleiben ausschließlich auf Ihrem Gerät und unterliegen vollständig Ihrer Kontrolle.</p>
+  </section>
+  <section id="de-s5"><div class="section-head"><span class="section-num">05</span><h2>Apple-Plattformdienste &amp; Absturzberichte</h2></div>
+    <p>Als über den Apple App Store vertriebene App unterliegt Joju den Standard-iOS-Plattformdiensten von Apple. Es gibt zwei wichtige Punkte zu beachten:</p>
+    <div class="notice"><p><strong>Absturzberichte (Optional – Einstellung auf Geräteebene)</strong></p><p>iOS von Apple enthält eine optionale Systemfunktion, die beim Absturz einer App anonyme Absturzberichte an App-Entwickler senden kann. Ob diese Daten weitergegeben werden, kontrollieren Sie über <strong>Einstellungen → Datenschutz &amp; Sicherheit → Analyse &amp; Verbesserungen</strong>. Falls aktiviert, kann Apple uns anonymisierte Diagnoseabsturzdaten ausschließlich zur Behebung technischer Probleme bereitstellen. Diese Daten enthalten keine personenbezogenen Informationen und unterliegen der <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Datenschutzrichtlinie von Apple</a>.</p></div>
+    <p><strong>App Store &amp; In-App-Käufe</strong><br>Apple erhebt eigenständig Informationen zu App Store-Downloads und In-App-Käufen gemäß der <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Datenschutzrichtlinie von Apple</a>. Wir erhalten keinen Zugang zu Zahlungs- oder persönlichen Informationen aus diesen Transaktionen.</p>
+  </section>
+  <section id="de-s6"><div class="section-head"><span class="section-num">06</span><h2>Drittanbieterdienste</h2></div>
+    <p>Joju integriert <strong>keine</strong> Dienste von Drittanbietern, die Nutzerdaten erheben oder übermitteln. Die App enthält insbesondere <strong>keine</strong>:</p>
+    <ul class="clean">
+      <li>Analyse-SDKs von Drittanbietern (z. B. Firebase, Mixpanel, Amplitude)</li>
+      <li>Werbenetzwerke oder -SDKs (z. B. AdMob, Meta Audience Network)</li>
+      <li>Absturzmelde-Tools (z. B. Crashlytics, Sentry)</li>
+      <li>Cloud-basierte KI- oder ML-APIs (z. B. OpenAI, Google Gemini)</li>
+      <li>Cloud-Speicherdienste</li>
+      <li>Social-Media-SDKs oder Login-Funktionen</li>
+      <li>Sonstige Drittanbieter-SDKs, die Nutzerdaten übertragen</li>
+    </ul>
+  </section>
+  <section id="de-s7"><div class="section-head"><span class="section-num">07</span><h2>Datenschutz für Kinder – Unsere höchste Priorität</h2></div>
+    <p>Joju wurde speziell für Kinder entwickelt, und deren Privatsphäre ist unser oberstes Anliegen. Wir erfüllen vollständig die folgenden Kinderdatenschutzgesetze auf globaler Ebene:</p>
+    <div class="country-grid">
+      <div class="country-card"><span class="flag">🇺🇸</span><div class="region">Vereinigte Staaten</div><div class="law">COPPA</div><div class="desc">Keine Erhebung personenbezogener Daten von Kindern unter 13 Jahren.</div></div>
+      <div class="country-card"><span class="flag">🇪🇺</span><div class="region">Europäische Union / EWR</div><div class="law">DSGVO Artikel 8</div><div class="desc">Keine personenbezogenen Daten von Kindern unter 16 Jahren (oder niedrigerem nationalen Schwellenwert).</div></div>
+      <div class="country-card"><span class="flag">🇬🇧</span><div class="region">Vereinigtes Königreich</div><div class="law">UK DSGVO · Children's Code</div><div class="desc">Höchste Datenschutzstandards standardmäßig für alle Kinder-Nutzer.</div></div>
+      <div class="country-card"><span class="flag">🇨🇦</span><div class="region">Kanada</div><div class="law">PIPEDA</div><div class="desc">Keine personenbezogenen Daten von Minderjährigen ohne verifizierbares elterliches Einverständnis.</div></div>
+      <div class="country-card"><span class="flag">🇦🇺</span><div class="region">Australien</div><div class="law">Privacy Act 1988</div><div class="desc">Privacy-by-Design-Standards zum Schutz aller Nutzer, einschließlich Kinder.</div></div>
+      <div class="country-card"><span class="flag">🇧🇷</span><div class="region">Brasilien</div><div class="law">LGPD</div><div class="desc">Keine Verarbeitung personenbezogener Daten von Kindern ohne elterliche Zustimmung.</div></div>
+    </div>
+    <div class="callout"><p><strong>Durch Design geschützt.</strong> Da die App keinerlei Daten sammelt, sind diese Schutzmaßnahmen automatisch erfüllt. Es gibt keine Daten, die gesammelt, geteilt oder missbraucht werden könnten – von keinem Nutzer, jeden Alters, in keinem Land.</p></div>
+    <p>Eltern und Erziehungsberechtigte können diese App mit vollständiger Gewissheit nutzen, dass keine Informationen über ihr Kind unter keinen Umständen gesammelt oder weitergegeben werden.</p>
+  </section>
+  <section id="de-s8"><div class="section-head"><span class="section-num">08</span><h2>Werbung</h2></div>
+    <p>Joju enthält <strong>keinerlei Werbung.</strong> Wir zeigen keine Anzeigen und verwenden keine Werbekennungen. Die App wird Kindern niemals Werbung anzeigen.</p>
+  </section>
+  <section id="de-s9"><div class="section-head"><span class="section-num">09</span><h2>In-App-Käufe</h2></div>
+    <p>Falls die App In-App-Käufe anbietet, werden diese Transaktionen ausschließlich über den Apple App Store abgewickelt. Wir erheben oder verarbeiten keinerlei Zahlungsinformationen. Alle Kaufnachweise werden ausschließlich von Apple gemäß deren Nutzungsbedingungen und Datenschutzrichtlinien verwaltet.</p>
+  </section>
+  <section id="de-s10"><div class="section-head"><span class="section-num">10</span><h2>Datensicherheit</h2></div>
+    <p>Da wir keinerlei Nutzerdaten erheben, speichern oder übermitteln, gibt es auf unserer Seite keine Nutzerdaten zu sichern. Alle innerhalb der App erzeugten Inhalte sind durch die integrierten Sicherheitsfunktionen Ihres Geräts geschützt, darunter Geräte-Passcode, Face ID, Touch ID und die Anwendungs-Sandbox-Architektur von iOS.</p>
+  </section>
+  <section id="de-s11"><div class="section-head"><span class="section-num">11</span><h2>Internationale Nutzer &amp; Globale Compliance</h2></div>
+    <p>Joju ist weltweit verfügbar. Da wir von keinem Nutzer in keinem Land personenbezogene Daten erheben, sind die Anforderungen an Datenübermittlung, Lokalisierung und Einwilligung internationaler Datenschutzrahmen – einschließlich DSGVO (EU/EWR), UK DSGVO, CCPA/CPRA (Kalifornien), PIPEDA (Kanada), LGPD (Brasilien), PDPA (Thailand/Singapur), POPIA (Südafrika) und anderer – durch die Null-Erhebungs-Architektur der App erfüllt.</p>
+    <p>Es werden keine personenbezogenen Daten grenzüberschreitend übermittelt, da von vornherein keine erhoben werden.</p>
+  </section>
+  <section id="de-s12"><div class="section-head"><span class="section-num">12</span><h2>Ihre Rechte</h2></div>
+    <p>Da wir keine personenbezogenen Daten erheben, gibt es keine Daten, die Auskunfts-, Berichtigungs-, Löschungs-, Übertragbarkeits- oder Einschränkungsanfragen unterliegen könnten. Dennoch haben Nutzer in jeder Rechtsordnung das Recht, uns bezüglich datenschutzrechtlicher Anliegen zu kontaktieren, und wir werden zeitnah antworten.</p>
+    <p><strong>Für Eltern und Erziehungsberechtigte:</strong> Sie haben die volle Kontrolle über die App-Nutzung Ihres Kindes über die Screen Time- und Kindersicherungsfunktionen Ihres Geräts in den iOS-Einstellungen.</p>
+  </section>
+  <section id="de-s13"><div class="section-head"><span class="section-num">13</span><h2>Datenspeicherung</h2></div>
+    <p>Wir speichern keine Nutzerdaten – es gibt nichts zu speichern. Alle innerhalb der App erzeugten Inhalte existieren ausschließlich auf Ihrem Gerät. Sie können alle App-Daten jederzeit durch Deinstallieren der App von Ihrem Gerät löschen.</p>
+  </section>
+  <section id="de-s14"><div class="section-head"><span class="section-num">14</span><h2>Änderungen dieser Datenschutzrichtlinie</h2></div>
+    <p>Wir können diese Datenschutzrichtlinie von Zeit zu Zeit aktualisieren. Änderungen werden durch Aktualisierung des Datums „Zuletzt aktualisiert" am Anfang dieser Richtlinie wiedergegeben. Wir empfehlen Ihnen, diese Richtlinie regelmäßig zu überprüfen.</p>
+    <p>Falls wir unsere Datenpraktiken grundlegend ändern – insbesondere in einer Weise, die die Erhebung von Daten von Kindern betrifft – werden wir im Voraus deutlich darauf hinweisen und, sofern gesetzlich vorgeschrieben, die verifizierbare elterliche Zustimmung einholen.</p>
+  </section>
+  <section id="de-s15"><div class="section-head"><span class="section-num">15</span><h2>Kontakt</h2></div>
+    <p>Wenn Sie Fragen, Bedenken oder Anfragen zu dieser Datenschutzrichtlinie haben – einschließlich Anfragen von Eltern oder Erziehungsberechtigten – kontaktieren Sie uns bitte:</p>
+    <div class="contact-card">
+      <p>Wir sind bestrebt, alle Datenschutzanfragen innerhalb von 30 Tagen zu beantworten.</p>
+      <div class="contact-row"><span class="label">E-Mail</span><a href="mailto:GLabsAI@outlook.com" class="value">GLabsAI@outlook.com</a></div>
+    </div>
+  </section>
+</main>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ FRENCH -->
+<div class="lang-section" id="lang-fr">
+<main class="page">
+  <nav class="toc" aria-label="Table des matières">
+    <div class="toc-title">Sommaire</div>
+    <ol>
+      <li><a href="#fr-s1"><span class="num">01</span>Introduction</a></li>
+      <li><a href="#fr-s2"><span class="num">02</span>Résumé</a></li>
+      <li><a href="#fr-s3"><span class="num">03</span>Collecte de données</a></li>
+      <li><a href="#fr-s4"><span class="num">04</span>Traitement IA sur l'appareil</a></li>
+      <li><a href="#fr-s5"><span class="num">05</span>Plateforme Apple &amp; rapports de plantage</a></li>
+      <li><a href="#fr-s6"><span class="num">06</span>Services tiers</a></li>
+      <li><a href="#fr-s7"><span class="num">07</span>Confidentialité des enfants</a></li>
+      <li><a href="#fr-s8"><span class="num">08</span>Publicité</a></li>
+      <li><a href="#fr-s9"><span class="num">09</span>Achats intégrés</a></li>
+      <li><a href="#fr-s10"><span class="num">10</span>Sécurité des données</a></li>
+      <li><a href="#fr-s11"><span class="num">11</span>Conformité internationale</a></li>
+      <li><a href="#fr-s12"><span class="num">12</span>Vos droits</a></li>
+      <li><a href="#fr-s13"><span class="num">13</span>Conservation des données</a></li>
+      <li><a href="#fr-s14"><span class="num">14</span>Modifications de la politique</a></li>
+      <li><a href="#fr-s15"><span class="num">15</span>Nous contacter</a></li>
+    </ol>
+  </nav>
+  <section id="fr-s1"><div class="section-head"><span class="section-num">01</span><h2>Introduction</h2></div>
+    <p>Joju (« l'Application », « nous », « notre » ou « nos ») s'engage à protéger votre vie privée — et celle des enfants qui utilisent l'Application. Cette Politique de confidentialité explique comment Joju traite les informations dans le cadre de votre utilisation de l'Application, disponible exclusivement sur l'Apple App Store pour iPhone et iPad.</p>
+    <p>Veuillez lire attentivement cette politique. En téléchargeant ou en utilisant l'Application, vous reconnaissez avoir lu et compris cette Politique de confidentialité.</p>
+  </section>
+  <section id="fr-s2"><div class="section-head"><span class="section-num">02</span><h2>Résumé</h2></div>
+    <div class="callout"><p><strong>Nous ne collectons rien. Nous ne stockons rien. Nous ne transmettons rien.</strong></p><p>Joju est une application pour enfants qui fonctionne entièrement sur votre appareil à l'aide de modèles d'IA locaux. Tous les traitements — y compris toutes les fonctionnalités d'IA — s'effectuent localement sur votre iPhone ou iPad. Aucune donnée n'est jamais envoyée à nous, à des serveurs ou à des tiers.</p></div>
+  </section>
+  <section id="fr-s3"><div class="section-head"><span class="section-num">03</span><h2>Collecte de données</h2></div>
+    <p><strong>Nous ne collectons aucune donnée personnelle — ni des enfants ni des adultes.</strong></p>
+    <p>Joju ne collecte, n'accède, ne stocke, ne transmet, ne partage ni ne traite aucune des informations suivantes :</p>
+    <ul class="clean">
+      <li>Identifiants personnels (nom, adresse e-mail, identifiant Apple, identifiant d'appareil, etc.)</li>
+      <li>Données de localisation (précises ou approximatives)</li>
+      <li>Données d'utilisation ou analyses comportementales</li>
+      <li>Diagnostics ou rapports de plantage envoyés à nous</li>
+      <li>Contenus générés par l'utilisateur</li>
+      <li>Photos, saisies via caméra ou microphone (sauf indication explicite ci-dessous)</li>
+      <li>Contacts, calendriers ou toute autre donnée de l'appareil</li>
+      <li>Informations de santé, financières ou biométriques</li>
+      <li>Historique de navigation ou de recherche</li>
+      <li>Identifiants publicitaires (IDFA ou similaires)</li>
+    </ul>
+  </section>
+  <section id="fr-s4"><div class="section-head"><span class="section-num">04</span><h2>Fonctionnement de l'Application — Traitement IA uniquement sur l'appareil</h2></div>
+    <p>Toutes les fonctionnalités de Joju, y compris l'intelligence artificielle et l'apprentissage automatique, sont exécutées entièrement sur votre appareil grâce aux frameworks Apple sur l'appareil (comme Core ML). Cela signifie :</p>
+    <ul class="clean check">
+      <li><strong>Tous les modèles d'IA fonctionnent localement</strong> sur votre appareil — aucune entrée ou sortie n'est envoyée à un serveur externe ou à un fournisseur d'IA.</li>
+      <li><strong>Aucune connexion Internet requise</strong> pour les fonctionnalités essentielles de l'Application.</li>
+      <li><strong>Aucune donnée n'est téléversée</strong> vers un serveur, service cloud ou point de terminaison distant.</li>
+      <li><strong>Aucune création de compte</strong> requise ou possible.</li>
+      <li><strong>Aucune donnée ne quitte votre appareil</strong> lors de l'utilisation de cette Application.</li>
+    </ul>
+    <p>Tout contenu généré ou traité par l'Application reste exclusivement sur votre appareil et est entièrement sous votre contrôle.</p>
+  </section>
+  <section id="fr-s5"><div class="section-head"><span class="section-num">05</span><h2>Services de la plateforme Apple &amp; rapports de plantage</h2></div>
+    <p>En tant qu'application distribuée via l'Apple App Store, Joju est soumis aux services standard de la plateforme iOS d'Apple. Deux points importants sont à noter :</p>
+    <div class="notice"><p><strong>Rapports de plantage (Optionnel — Paramètre au niveau de l'appareil)</strong></p><p>iOS d'Apple inclut une fonctionnalité système optionnelle permettant l'envoi de rapports de plantage anonymes aux développeurs d'applications. Le partage de ces données est entièrement contrôlé par vous via <strong>Réglages → Confidentialité &amp; Sécurité → Analyse &amp; Améliorations</strong>. Si activé, Apple peut partager des données de diagnostic anonymisées avec nous uniquement pour résoudre des problèmes techniques. Ces données ne contiennent aucune information personnelle et sont régies par la <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Politique de confidentialité d'Apple</a>.</p></div>
+    <p><strong>App Store &amp; Achats intégrés</strong><br>Apple collecte indépendamment des informations relatives aux téléchargements et achats intégrés conformément à la <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Politique de confidentialité d'Apple</a>. Nous ne recevons pas et n'avons pas accès aux informations de paiement ou personnelles liées à ces transactions.</p>
+  </section>
+  <section id="fr-s6"><div class="section-head"><span class="section-num">06</span><h2>Services tiers</h2></div>
+    <p>Joju n'intègre <strong>aucun</strong> service tiers qui collecte ou transmet des données utilisateur. Plus précisément, l'Application ne contient <strong>aucun</strong> :</p>
+    <ul class="clean">
+      <li>SDK d'analyse tiers (ex. Firebase, Mixpanel, Amplitude)</li>
+      <li>Réseaux ou SDK publicitaires (ex. AdMob, Meta Audience Network)</li>
+      <li>Outils de rapport de plantage (ex. Crashlytics, Sentry)</li>
+      <li>API d'IA ou ML basées sur le cloud (ex. OpenAI, Google Gemini)</li>
+      <li>Services de stockage cloud</li>
+      <li>SDK de réseaux sociaux ou fonctionnalités de connexion</li>
+      <li>Tout autre SDK tiers accédant ou transmettant des données utilisateur</li>
+    </ul>
+  </section>
+  <section id="fr-s7"><div class="section-head"><span class="section-num">07</span><h2>Confidentialité des enfants — Notre priorité absolue</h2></div>
+    <p>Joju est conçu spécifiquement pour les enfants, et leur vie privée est notre préoccupation principale. Nous respectons pleinement les lois suivantes sur la protection de la vie privée des enfants à l'échelle mondiale :</p>
+    <div class="country-grid">
+      <div class="country-card"><span class="flag">🇺🇸</span><div class="region">États-Unis</div><div class="law">COPPA</div><div class="desc">Aucune information personnelle collectée sur les enfants de moins de 13 ans.</div></div>
+      <div class="country-card"><span class="flag">🇪🇺</span><div class="region">Union européenne / EEE</div><div class="law">RGPD Article 8</div><div class="desc">Aucune information personnelle collectée sur les enfants de moins de 16 ans (ou seuil national inférieur).</div></div>
+      <div class="country-card"><span class="flag">🇬🇧</span><div class="region">Royaume-Uni</div><div class="law">UK RGPD · Children's Code</div><div class="desc">Niveau de protection le plus élevé appliqué par défaut à tous les utilisateurs enfants.</div></div>
+      <div class="country-card"><span class="flag">🇨🇦</span><div class="region">Canada</div><div class="law">LPRPDE</div><div class="desc">Aucune information personnelle collectée auprès de mineurs sans consentement parental vérifié.</div></div>
+      <div class="country-card"><span class="flag">🇦🇺</span><div class="region">Australie</div><div class="law">Privacy Act 1988</div><div class="desc">Normes de protection de la vie privée dès la conception pour tous les utilisateurs, y compris les enfants.</div></div>
+      <div class="country-card"><span class="flag">🇧🇷</span><div class="region">Brésil</div><div class="law">LGPD</div><div class="desc">Aucune donnée personnelle d'enfants traitée sans consentement parental ou tuteur.</div></div>
+    </div>
+    <div class="callout"><p><strong>Protégé par conception.</strong> Puisque l'Application ne collecte aucune donnée, ces protections sont automatiquement satisfaites. Il n'y a aucune donnée à collecter, partager ou utiliser à mauvais escient — de quelque utilisateur, de tout âge, dans tout pays.</p></div>
+    <p>Les parents et tuteurs peuvent utiliser cette Application avec la certitude absolue qu'aucune information sur leur enfant n'est collectée ou partagée en aucune circonstance.</p>
+  </section>
+  <section id="fr-s8"><div class="section-head"><span class="section-num">08</span><h2>Publicité</h2></div>
+    <p>Joju ne contient <strong>aucune publicité.</strong> Nous n'affichons pas d'annonces et n'utilisons pas d'identifiants publicitaires. L'Application ne montrera jamais de publicités aux enfants.</p>
+  </section>
+  <section id="fr-s9"><div class="section-head"><span class="section-num">09</span><h2>Achats intégrés</h2></div>
+    <p>Si l'Application propose des achats intégrés, ces transactions sont traitées exclusivement via l'App Store d'Apple. Nous ne collectons ni ne traitons aucune information de paiement. Tous les enregistrements d'achats sont gérés uniquement par Apple conformément à leurs conditions et politique de confidentialité.</p>
+  </section>
+  <section id="fr-s10"><div class="section-head"><span class="section-num">10</span><h2>Sécurité des données</h2></div>
+    <p>Puisque nous ne collectons, ne stockons ni ne transmettons aucune donnée utilisateur, il n'y a aucune donnée à sécuriser de notre côté. Tout contenu généré dans l'Application est protégé par les fonctionnalités de sécurité intégrées de votre appareil, notamment le code d'accès, Face ID, Touch ID et l'architecture de sandboxing d'iOS.</p>
+  </section>
+  <section id="fr-s11"><div class="section-head"><span class="section-num">11</span><h2>Utilisateurs internationaux &amp; conformité mondiale</h2></div>
+    <p>Joju est disponible dans le monde entier. Puisque nous ne collectons aucune donnée personnelle d'aucun utilisateur dans aucun pays, les exigences en matière de transfert de données, de localisation et de consentement des cadres internationaux de confidentialité — notamment RGPD (UE/EEE), UK RGPD, CCPA/CPRA (Californie), LPRPDE (Canada), LGPD (Brésil), PDPA (Thaïlande/Singapour), POPIA (Afrique du Sud) et autres — sont satisfaites par l'architecture zéro-collecte de l'Application.</p>
+    <p>Aucune donnée personnelle n'est transférée au-delà des frontières car aucune donnée personnelle n'est collectée en premier lieu.</p>
+  </section>
+  <section id="fr-s12"><div class="section-head"><span class="section-num">12</span><h2>Vos droits</h2></div>
+    <p>Puisque nous ne collectons aucune donnée personnelle, il n'y a aucune donnée soumise aux demandes d'accès, de rectification, d'effacement, de portabilité ou de limitation. Néanmoins, les utilisateurs de toute juridiction conservent le droit de nous contacter pour des préoccupations liées à la vie privée, et nous répondrons rapidement.</p>
+    <p><strong>Pour les parents et tuteurs :</strong> Vous avez un contrôle total sur l'utilisation de l'Application par votre enfant via les fonctions Temps d'écran et contrôle parental de votre appareil, disponibles dans les Réglages iOS.</p>
+  </section>
+  <section id="fr-s13"><div class="section-head"><span class="section-num">13</span><h2>Conservation des données</h2></div>
+    <p>Nous ne conservons aucune donnée utilisateur — il n'y a rien à conserver. Tout contenu généré dans l'Application existe uniquement sur votre appareil. Vous pouvez supprimer toutes les données de l'Application à tout moment en désinstallant l'Application de votre appareil.</p>
+  </section>
+  <section id="fr-s14"><div class="section-head"><span class="section-num">14</span><h2>Modifications de cette Politique de confidentialité</h2></div>
+    <p>Nous pouvons mettre à jour cette Politique de confidentialité de temps à autre. Toute modification sera reflétée par la mise à jour de la date « Dernière mise à jour » en haut de cette politique. Nous vous encourageons à consulter régulièrement cette politique.</p>
+    <p>Si nous modifions substantiellement nos pratiques en matière de données — notamment d'une manière impliquant la collecte de données auprès d'enfants — nous fournirons un préavis bien visible et obtiendrons le consentement parental vérifiable là où la loi applicable l'exige.</p>
+  </section>
+  <section id="fr-s15"><div class="section-head"><span class="section-num">15</span><h2>Nous contacter</h2></div>
+    <p>Si vous avez des questions, préoccupations ou demandes concernant cette Politique de confidentialité — y compris toute demande de parents ou tuteurs — veuillez nous contacter :</p>
+    <div class="contact-card">
+      <p>Nous nous engageons à répondre à toutes les demandes relatives à la vie privée dans les 30 jours.</p>
+      <div class="contact-row"><span class="label">E-mail</span><a href="mailto:GLabsAI@outlook.com" class="value">GLabsAI@outlook.com</a></div>
+    </div>
+  </section>
+</main>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ PORTUGUESE (BR) -->
+<div class="lang-section" id="lang-pt">
+<main class="page">
+  <nav class="toc" aria-label="Índice">
+    <div class="toc-title">Conteúdo</div>
+    <ol>
+      <li><a href="#pt-s1"><span class="num">01</span>Introdução</a></li>
+      <li><a href="#pt-s2"><span class="num">02</span>Versão Resumida</a></li>
+      <li><a href="#pt-s3"><span class="num">03</span>Coleta de Dados</a></li>
+      <li><a href="#pt-s4"><span class="num">04</span>IA no Dispositivo</a></li>
+      <li><a href="#pt-s5"><span class="num">05</span>Plataforma Apple &amp; Relatórios de Falha</a></li>
+      <li><a href="#pt-s6"><span class="num">06</span>Serviços de Terceiros</a></li>
+      <li><a href="#pt-s7"><span class="num">07</span>Privacidade de Crianças</a></li>
+      <li><a href="#pt-s8"><span class="num">08</span>Publicidade</a></li>
+      <li><a href="#pt-s9"><span class="num">09</span>Compras no Aplicativo</a></li>
+      <li><a href="#pt-s10"><span class="num">10</span>Segurança de Dados</a></li>
+      <li><a href="#pt-s11"><span class="num">11</span>Conformidade Internacional</a></li>
+      <li><a href="#pt-s12"><span class="num">12</span>Seus Direitos</a></li>
+      <li><a href="#pt-s13"><span class="num">13</span>Retenção de Dados</a></li>
+      <li><a href="#pt-s14"><span class="num">14</span>Alterações na Política</a></li>
+      <li><a href="#pt-s15"><span class="num">15</span>Fale Conosco</a></li>
+    </ol>
+  </nav>
+  <section id="pt-s1"><div class="section-head"><span class="section-num">01</span><h2>Introdução</h2></div>
+    <p>Joju ("o Aplicativo", "nós", "nosso" ou "nos") está comprometido em proteger sua privacidade — e a privacidade das crianças que utilizam o Aplicativo. Esta Política de Privacidade explica como o Joju lida com informações relacionadas ao uso do Aplicativo, disponível exclusivamente na Apple App Store para iPhone e iPad.</p>
+    <p>Por favor, leia esta política atentamente. Ao baixar ou usar o Aplicativo, você reconhece que leu e compreendeu esta Política de Privacidade.</p>
+  </section>
+  <section id="pt-s2"><div class="section-head"><span class="section-num">02</span><h2>Versão Resumida</h2></div>
+    <div class="callout"><p><strong>Não coletamos nada. Não armazenamos nada. Não transmitimos nada.</strong></p><p>Joju é um aplicativo infantil que funciona inteiramente em seu dispositivo usando modelos de IA locais. Todo o processamento — incluindo todos os recursos de IA — ocorre localmente no seu iPhone ou iPad. Nenhum dado de qualquer tipo é enviado a nós, a qualquer servidor ou a terceiros.</p></div>
+  </section>
+  <section id="pt-s3"><div class="section-head"><span class="section-num">03</span><h2>Coleta de Dados</h2></div>
+    <p><strong>Não coletamos nenhum dado pessoal — de crianças ou adultos.</strong></p>
+    <p>Joju não coleta, acessa, armazena, transmite, compartilha ou processa nenhuma das seguintes informações:</p>
+    <ul class="clean">
+      <li>Identificadores pessoais (nome, endereço de e-mail, Apple ID, ID do dispositivo, etc.)</li>
+      <li>Dados de localização (precisos ou aproximados)</li>
+      <li>Dados de uso ou análises comportamentais</li>
+      <li>Diagnósticos ou relatórios de falha enviados a nós</li>
+      <li>Conteúdo gerado pelo usuário</li>
+      <li>Fotos, câmera ou entrada de microfone (salvo indicação explícita abaixo)</li>
+      <li>Contatos, calendários ou quaisquer outros dados do dispositivo</li>
+      <li>Informações de saúde, financeiras ou biométricas</li>
+      <li>Histórico de navegação ou pesquisa</li>
+      <li>Identificadores de publicidade (IDFA ou similares)</li>
+    </ul>
+  </section>
+  <section id="pt-s4"><div class="section-head"><span class="section-num">04</span><h2>Como o Aplicativo Funciona — Processamento de IA Apenas no Dispositivo</h2></div>
+    <p>Todas as funcionalidades do Joju, incluindo todos os recursos de inteligência artificial e aprendizado de máquina, são executadas inteiramente em seu dispositivo usando os frameworks on-device da Apple (como Core ML). Isso significa:</p>
+    <ul class="clean check">
+      <li><strong>Todos os modelos de IA rodam localmente</strong> no seu dispositivo — nenhuma entrada ou saída é enviada a servidores externos ou provedores de IA.</li>
+      <li><strong>Nenhuma conexão à internet é necessária</strong> para qualquer funcionalidade essencial do Aplicativo.</li>
+      <li><strong>Nenhum dado é enviado</strong> a servidores, serviços em nuvem ou endpoints remotos.</li>
+      <li><strong>Nenhuma criação de conta</strong> é necessária ou possível.</li>
+      <li><strong>Nenhum dado sai do seu dispositivo</strong> como resultado do uso deste Aplicativo.</li>
+    </ul>
+    <p>Qualquer conteúdo gerado ou processado pelo Aplicativo permanece exclusivamente em seu dispositivo e está totalmente sob seu controle.</p>
+  </section>
+  <section id="pt-s5"><div class="section-head"><span class="section-num">05</span><h2>Serviços da Plataforma Apple &amp; Relatórios de Falha</h2></div>
+    <p>Como um aplicativo distribuído pela Apple App Store, Joju está sujeito aos serviços padrão da plataforma iOS da Apple. Há dois pontos importantes a considerar:</p>
+    <div class="notice"><p><strong>Relatórios de Falha (Opcional — Configuração no Nível do Dispositivo)</strong></p><p>O iOS da Apple inclui um recurso opcional em nível de sistema que pode enviar relatórios de falha anônimos aos desenvolvedores de aplicativos. Se esses dados são compartilhados é controlado por você em <strong>Ajustes → Privacidade &amp; Segurança → Análise &amp; Melhorias</strong>. Se habilitado, a Apple pode compartilhar dados de diagnóstico anonimizados exclusivamente para corrigir problemas técnicos. Esses dados não contêm informações pessoais e são regidos pela <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Política de Privacidade da Apple</a>.</p></div>
+    <p><strong>App Store &amp; Compras no Aplicativo</strong><br>A Apple coleta independentemente informações relacionadas a downloads da App Store e compras no aplicativo conforme a <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Política de Privacidade da Apple</a>. Não recebemos nem temos acesso a informações de pagamento ou pessoais associadas a essas transações.</p>
+  </section>
+  <section id="pt-s6"><div class="section-head"><span class="section-num">06</span><h2>Serviços de Terceiros</h2></div>
+    <p>Joju <strong>não</strong> integra nenhum serviço de terceiros que coleta ou transmite dados de usuário. Especificamente, o Aplicativo não contém <strong>nenhum</strong>:</p>
+    <ul class="clean">
+      <li>SDKs de análise de terceiros (ex.: Firebase, Mixpanel, Amplitude)</li>
+      <li>Redes ou SDKs de publicidade (ex.: AdMob, Meta Audience Network)</li>
+      <li>Ferramentas de relatório de falha (ex.: Crashlytics, Sentry)</li>
+      <li>APIs de IA ou ML baseadas em nuvem (ex.: OpenAI, Google Gemini)</li>
+      <li>Serviços de armazenamento em nuvem</li>
+      <li>SDKs de redes sociais ou recursos de login</li>
+      <li>Qualquer outro SDK de terceiros que acesse ou transmita dados de usuário</li>
+    </ul>
+  </section>
+  <section id="pt-s7"><div class="section-head"><span class="section-num">07</span><h2>Privacidade de Crianças — Nossa Maior Prioridade</h2></div>
+    <p>Joju foi desenvolvido especificamente para crianças, e a privacidade delas é nossa principal preocupação. Cumprimos integralmente as seguintes leis de privacidade infantil em âmbito global:</p>
+    <div class="country-grid">
+      <div class="country-card"><span class="flag">🇺🇸</span><div class="region">Estados Unidos</div><div class="law">COPPA</div><div class="desc">Nenhuma informação pessoal coletada de crianças menores de 13 anos.</div></div>
+      <div class="country-card"><span class="flag">🇪🇺</span><div class="region">União Europeia / EEE</div><div class="law">RGPD Artigo 8</div><div class="desc">Nenhuma informação pessoal de crianças menores de 16 anos (ou limite nacional inferior).</div></div>
+      <div class="country-card"><span class="flag">🇬🇧</span><div class="region">Reino Unido</div><div class="law">UK RGPD · Children's Code</div><div class="desc">Mais alto padrão de proteção de privacidade aplicado por padrão a todos os usuários crianças.</div></div>
+      <div class="country-card"><span class="flag">🇨🇦</span><div class="region">Canadá</div><div class="law">PIPEDA</div><div class="desc">Nenhuma informação pessoal de menores sem consentimento parental verificado.</div></div>
+      <div class="country-card"><span class="flag">🇦🇺</span><div class="region">Austrália</div><div class="law">Privacy Act 1988</div><div class="desc">Padrões de privacidade por design protegendo todos os usuários, incluindo crianças.</div></div>
+      <div class="country-card"><span class="flag">🇧🇷</span><div class="region">Brasil</div><div class="law">LGPD</div><div class="desc">Nenhum dado pessoal de crianças processado sem consentimento dos pais ou responsáveis.</div></div>
+    </div>
+    <div class="callout"><p><strong>Protegido por design.</strong> Como o Aplicativo não coleta nenhum dado, essas proteções são automaticamente cumpridas. Não há dados a coletar, compartilhar ou usar indevidamente — de qualquer usuário, de qualquer idade, em qualquer país.</p></div>
+    <p>Pais e responsáveis podem usar este Aplicativo com total confiança de que nenhuma informação sobre seus filhos é coletada ou compartilhada em nenhuma circunstância.</p>
+  </section>
+  <section id="pt-s8"><div class="section-head"><span class="section-num">08</span><h2>Publicidade</h2></div>
+    <p>Joju não contém <strong>nenhum tipo de publicidade.</strong> Não exibimos anúncios e não usamos identificadores de publicidade. O Aplicativo nunca mostrará propagandas para crianças.</p>
+  </section>
+  <section id="pt-s9"><div class="section-head"><span class="section-num">09</span><h2>Compras no Aplicativo</h2></div>
+    <p>Se o Aplicativo oferecer compras no aplicativo, essas transações são processadas exclusivamente pela Apple App Store. Não coletamos nem processamos informações de pagamento. Todos os registros de compra são gerenciados exclusivamente pela Apple conforme seus termos e política de privacidade.</p>
+  </section>
+  <section id="pt-s10"><div class="section-head"><span class="section-num">10</span><h2>Segurança de Dados</h2></div>
+    <p>Como não coletamos, armazenamos ou transmitimos nenhum dado de usuário, não há dados de usuário em nosso lado para proteger. Todo conteúdo gerado no Aplicativo é protegido pelos recursos de segurança integrados do seu dispositivo, incluindo senha do dispositivo, Face ID, Touch ID e a arquitetura de sandboxing do iOS.</p>
+  </section>
+  <section id="pt-s11"><div class="section-head"><span class="section-num">11</span><h2>Usuários Internacionais &amp; Conformidade Global</h2></div>
+    <p>Joju está disponível em todo o mundo. Como não coletamos dados pessoais de nenhum usuário em nenhum país, os requisitos de transferência de dados, localização e consentimento de estruturas internacionais de privacidade — incluindo RGPD (UE/EEE), UK RGPD, CCPA/CPRA (Califórnia), PIPEDA (Canadá), LGPD (Brasil), PDPA (Tailândia/Singapura), POPIA (África do Sul) e outros — são satisfeitos pela arquitetura de coleta zero do Aplicativo.</p>
+    <p>Nenhum dado pessoal é transferido entre fronteiras porque nenhum dado pessoal é coletado em primeiro lugar.</p>
+  </section>
+  <section id="pt-s12"><div class="section-head"><span class="section-num">12</span><h2>Seus Direitos</h2></div>
+    <p>Como não coletamos dados pessoais, não há dados sujeitos a solicitações de acesso, correção, exclusão, portabilidade ou restrição. Ainda assim, usuários em qualquer jurisdição mantêm o direito de nos contatar com preocupações relacionadas à privacidade, e responderemos prontamente.</p>
+    <p><strong>Para pais e responsáveis:</strong> Você tem controle total sobre o uso do Aplicativo pelo seu filho por meio dos recursos de Tempo de Tela e controles parentais do seu dispositivo, disponíveis nas Configurações do iOS.</p>
+  </section>
+  <section id="pt-s13"><div class="section-head"><span class="section-num">13</span><h2>Retenção de Dados</h2></div>
+    <p>Não retemos dados de usuário — não há nada a reter. Todo conteúdo gerado no Aplicativo existe exclusivamente em seu dispositivo. Você pode excluir todos os dados do Aplicativo a qualquer momento desinstalando o Aplicativo do seu dispositivo.</p>
+  </section>
+  <section id="pt-s14"><div class="section-head"><span class="section-num">14</span><h2>Alterações nesta Política de Privacidade</h2></div>
+    <p>Podemos atualizar esta Política de Privacidade periodicamente. Quaisquer alterações serão refletidas pela atualização da data de "Última Atualização" no topo desta política. Encorajamos você a revisar esta política periodicamente.</p>
+    <p>Se alterarmos materialmente nossas práticas de dados — particularmente de qualquer forma que envolva a coleta de dados de crianças — forneceremos aviso prévio proeminente e obteremos consentimento parental verificável onde exigido pela lei aplicável.</p>
+  </section>
+  <section id="pt-s15"><div class="section-head"><span class="section-num">15</span><h2>Fale Conosco</h2></div>
+    <p>Se você tiver dúvidas, preocupações ou solicitações sobre esta Política de Privacidade — incluindo consultas de pais ou responsáveis — entre em contato conosco:</p>
+    <div class="contact-card">
+      <p>Nosso objetivo é responder a todas as consultas de privacidade em 30 dias.</p>
+      <div class="contact-row"><span class="label">E-mail</span><a href="mailto:GLabsAI@outlook.com" class="value">GLabsAI@outlook.com</a></div>
+    </div>
+  </section>
+</main>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ KOREAN -->
+<div class="lang-section" id="lang-ko">
+<main class="page">
+  <nav class="toc" aria-label="목차">
+    <div class="toc-title">목차</div>
+    <ol>
+      <li><a href="#ko-s1"><span class="num">01</span>소개</a></li>
+      <li><a href="#ko-s2"><span class="num">02</span>요약</a></li>
+      <li><a href="#ko-s3"><span class="num">03</span>데이터 수집</a></li>
+      <li><a href="#ko-s4"><span class="num">04</span>기기 내 AI 처리</a></li>
+      <li><a href="#ko-s5"><span class="num">05</span>Apple 플랫폼 &amp; 충돌 보고서</a></li>
+      <li><a href="#ko-s6"><span class="num">06</span>제3자 서비스</a></li>
+      <li><a href="#ko-s7"><span class="num">07</span>아동 개인정보</a></li>
+      <li><a href="#ko-s8"><span class="num">08</span>광고</a></li>
+      <li><a href="#ko-s9"><span class="num">09</span>인앱 구매</a></li>
+      <li><a href="#ko-s10"><span class="num">10</span>데이터 보안</a></li>
+      <li><a href="#ko-s11"><span class="num">11</span>국제 준수</a></li>
+      <li><a href="#ko-s12"><span class="num">12</span>사용자 권리</a></li>
+      <li><a href="#ko-s13"><span class="num">13</span>데이터 보존</a></li>
+      <li><a href="#ko-s14"><span class="num">14</span>정책 변경</a></li>
+      <li><a href="#ko-s15"><span class="num">15</span>문의하기</a></li>
+    </ol>
+  </nav>
+  <section id="ko-s1"><div class="section-head"><span class="section-num">01</span><h2>소개</h2></div>
+    <p>Joju("앱", "당사", "우리" 또는 "저희")는 귀하의 개인정보 — 그리고 앱을 사용하는 아동의 개인정보 — 를 보호하기 위해 최선을 다합니다. 이 개인정보 처리방침은 iPhone 및 iPad용 Apple App Store에서만 제공되는 앱을 사용할 때 Joju가 정보를 처리하는 방식을 설명합니다.</p>
+    <p>이 방침을 주의 깊게 읽어 주세요. 앱을 다운로드하거나 사용함으로써 귀하는 이 개인정보 처리방침을 읽고 이해했음을 인정합니다.</p>
+  </section>
+  <section id="ko-s2"><div class="section-head"><span class="section-num">02</span><h2>요약</h2></div>
+    <div class="callout"><p><strong>아무것도 수집하지 않습니다. 아무것도 저장하지 않습니다. 아무것도 전송하지 않습니다.</strong></p><p>Joju는 기기 내 AI 모델을 사용하여 완전히 귀하의 기기에서 작동하는 아동용 앱입니다. AI 기능을 포함한 모든 처리는 귀하의 iPhone 또는 iPad에서 로컬로 이루어집니다. 어떠한 종류의 데이터도 당사, 서버 또는 제3자에게 전송되지 않습니다.</p></div>
+  </section>
+  <section id="ko-s3"><div class="section-head"><span class="section-num">03</span><h2>데이터 수집</h2></div>
+    <p><strong>아동과 성인 모두의 개인 데이터를 수집하지 않습니다.</strong></p>
+    <p>Joju는 다음 정보 중 어느 것도 수집, 접근, 저장, 전송, 공유 또는 처리하지 않습니다:</p>
+    <ul class="clean">
+      <li>개인 식별자 (이름, 이메일 주소, Apple ID, 기기 ID 등)</li>
+      <li>위치 데이터 (정확하거나 대략적인)</li>
+      <li>사용 데이터 또는 행동 분석</li>
+      <li>당사에 전송된 진단 또는 충돌 보고서</li>
+      <li>사용자 생성 콘텐츠</li>
+      <li>사진, 카메라 또는 마이크 입력 (아래 명시적으로 언급된 경우 제외)</li>
+      <li>연락처, 캘린더 또는 기타 기기 데이터</li>
+      <li>건강, 금융 또는 생체 인식 정보</li>
+      <li>탐색 또는 검색 기록</li>
+      <li>광고 식별자 (IDFA 또는 유사한 것)</li>
+    </ul>
+  </section>
+  <section id="ko-s4"><div class="section-head"><span class="section-num">04</span><h2>앱 작동 방식 — 기기 내 AI 처리만</h2></div>
+    <p>AI 및 머신러닝 기능을 포함한 Joju의 모든 기능은 Apple의 기기 내 프레임워크(Core ML 등)를 사용하여 귀하의 기기에서 완전히 수행됩니다. 이는 다음을 의미합니다:</p>
+    <ul class="clean check">
+      <li><strong>모든 AI 모델이 로컬에서 실행</strong>됩니다 — 어떠한 입력 또는 출력도 외부 서버나 AI 공급자에게 전송되지 않습니다.</li>
+      <li><strong>핵심 앱 기능에 인터넷 연결이 필요하지 않습니다.</strong></li>
+      <li><strong>어떠한 데이터도 업로드되지 않습니다</strong> — 서버, 클라우드 서비스 또는 원격 엔드포인트에.</li>
+      <li><strong>계정 생성이 필요하거나 가능하지 않습니다.</strong></li>
+      <li><strong>이 앱을 사용해도 어떠한 데이터도 기기를 떠나지 않습니다.</strong></li>
+    </ul>
+    <p>앱에서 생성되거나 처리된 모든 콘텐츠는 귀하의 기기에만 남아 있으며 완전히 귀하의 통제하에 있습니다.</p>
+  </section>
+  <section id="ko-s5"><div class="section-head"><span class="section-num">05</span><h2>Apple 플랫폼 서비스 &amp; 충돌 보고</h2></div>
+    <p>Apple App Store를 통해 배포된 앱으로서 Joju는 Apple의 표준 iOS 플랫폼 서비스의 적용을 받습니다. 두 가지 중요한 사항이 있습니다:</p>
+    <div class="notice"><p><strong>충돌 보고서 (선택 사항 — 기기 수준 설정)</strong></p><p>Apple의 iOS에는 앱이 충돌할 때 앱 개발자에게 익명 충돌 보고서를 보낼 수 있는 선택적 시스템 수준 기능이 포함되어 있습니다. 이 데이터 공유 여부는 <strong>설정 → 개인정보 보호 &amp; 보안 → 분석 &amp; 개선</strong>을 통해 귀하가 완전히 제어합니다. 활성화된 경우 Apple은 기술 문제 수정 목적으로만 익명화된 진단 충돌 데이터를 당사와 공유할 수 있습니다. 이 데이터에는 개인 정보가 포함되지 않으며 <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple의 개인정보 처리방침</a>이 적용됩니다.</p></div>
+    <p><strong>App Store &amp; 인앱 구매</strong><br>Apple은 <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple의 개인정보 처리방침</a>에 따라 App Store 다운로드 및 인앱 구매와 관련된 정보를 독립적으로 수집합니다. 당사는 이러한 거래와 관련된 결제 또는 개인 정보를 받거나 접근하지 않습니다.</p>
+  </section>
+  <section id="ko-s6"><div class="section-head"><span class="section-num">06</span><h2>제3자 서비스</h2></div>
+    <p>Joju는 사용자 데이터를 수집하거나 전송하는 제3자 서비스를 <strong>통합하지 않습니다.</strong> 구체적으로 앱에는 다음이 <strong>포함되지 않습니다:</strong></p>
+    <ul class="clean">
+      <li>제3자 분석 SDK (예: Firebase, Mixpanel, Amplitude)</li>
+      <li>광고 네트워크 또는 SDK (예: AdMob, Meta Audience Network)</li>
+      <li>충돌 보고 도구 (예: Crashlytics, Sentry)</li>
+      <li>클라우드 기반 AI 또는 머신러닝 API (예: OpenAI, Google Gemini)</li>
+      <li>클라우드 스토리지 서비스</li>
+      <li>소셜 미디어 SDK 또는 로그인 기능</li>
+      <li>사용자 데이터에 접근하거나 전송하는 기타 제3자 SDK</li>
+    </ul>
+  </section>
+  <section id="ko-s7"><div class="section-head"><span class="section-num">07</span><h2>아동 개인정보 — 최우선 사항</h2></div>
+    <p>Joju는 특히 아동을 위해 설계되었으며, 아동의 개인정보 보호가 당사의 최우선 관심사입니다. 당사는 전 세계적으로 다음 아동 개인정보 보호법을 완전히 준수합니다:</p>
+    <div class="country-grid">
+      <div class="country-card"><span class="flag">🇺🇸</span><div class="region">미국</div><div class="law">COPPA</div><div class="desc">13세 미만 아동의 개인 정보 수집 없음.</div></div>
+      <div class="country-card"><span class="flag">🇪🇺</span><div class="region">유럽연합 / EEA</div><div class="law">GDPR 제8조</div><div class="desc">16세 미만 아동의 개인 정보 수집 없음 (또는 더 낮은 국가 기준).</div></div>
+      <div class="country-card"><span class="flag">🇬🇧</span><div class="region">영국</div><div class="law">UK GDPR · 아동 강령</div><div class="desc">모든 아동 사용자에게 기본적으로 최고 수준의 개인정보 보호 적용.</div></div>
+      <div class="country-card"><span class="flag">🇨🇦</span><div class="region">캐나다</div><div class="law">PIPEDA</div><div class="desc">검증된 부모 동의 없이 미성년자 개인정보 수집 없음.</div></div>
+      <div class="country-card"><span class="flag">🇦🇺</span><div class="region">호주</div><div class="law">개인정보 보호법 1988</div><div class="desc">아동을 포함한 모든 사용자를 보호하는 프라이버시 바이 디자인 기준.</div></div>
+      <div class="country-card"><span class="flag">🇧🇷</span><div class="region">브라질</div><div class="law">LGPD</div><div class="desc">부모 또는 보호자 동의 없이 아동의 개인 데이터 처리 없음.</div></div>
+    </div>
+    <div class="callout"><p><strong>설계로 보호됩니다.</strong> 앱이 어떠한 데이터도 수집하지 않기 때문에 이러한 보호 조치는 자동으로 이행됩니다. 수집, 공유 또는 오용될 데이터가 없습니다 — 어느 나라의 어떤 연령대 사용자에게도.</p></div>
+    <p>부모와 보호자는 어떠한 상황에서도 자녀에 관한 정보가 수집되거나 공유되지 않는다는 완전한 확신을 가지고 이 앱을 사용할 수 있습니다.</p>
+  </section>
+  <section id="ko-s8"><div class="section-head"><span class="section-num">08</span><h2>광고</h2></div>
+    <p>Joju에는 <strong>어떠한 종류의 광고도 포함되지 않습니다.</strong> 광고를 표시하지 않으며 광고 식별자를 사용하지 않습니다. 앱은 아동에게 절대 광고를 보여주지 않습니다.</p>
+  </section>
+  <section id="ko-s9"><div class="section-head"><span class="section-num">09</span><h2>인앱 구매</h2></div>
+    <p>앱이 인앱 구매를 제공하는 경우, 이러한 거래는 Apple App Store를 통해서만 처리됩니다. 당사는 결제 정보를 수집하거나 처리하지 않습니다. 모든 구매 기록은 Apple의 약관 및 개인정보 처리방침에 따라 Apple만이 처리합니다.</p>
+  </section>
+  <section id="ko-s10"><div class="section-head"><span class="section-num">10</span><h2>데이터 보안</h2></div>
+    <p>당사는 사용자 데이터를 수집, 저장 또는 전송하지 않으므로 당사 측에 보안을 유지해야 할 사용자 데이터가 없습니다. 앱 내에서 생성된 모든 콘텐츠는 기기 비밀번호, Face ID, Touch ID 및 iOS의 애플리케이션 샌드박싱 아키텍처를 포함한 기기의 내장 보안 기능으로 보호됩니다.</p>
+  </section>
+  <section id="ko-s11"><div class="section-head"><span class="section-num">11</span><h2>국제 사용자 &amp; 글로벌 준수</h2></div>
+    <p>Joju는 전 세계에서 이용 가능합니다. 당사는 어느 나라의 어떤 사용자로부터도 개인 데이터를 수집하지 않으므로, GDPR(EU/EEA), UK GDPR, CCPA/CPRA(캘리포니아), PIPEDA(캐나다), LGPD(브라질), PDPA(태국/싱가포르), POPIA(남아프리카 공화국) 등 국제 개인정보 보호 체계의 데이터 이전, 현지화 및 동의 요건은 앱의 제로 수집 아키텍처로 충족됩니다.</p>
+    <p>개인 데이터가 처음부터 수집되지 않으므로 국경을 넘는 개인 데이터 이전은 없습니다.</p>
+  </section>
+  <section id="ko-s12"><div class="section-head"><span class="section-num">12</span><h2>귀하의 권리</h2></div>
+    <p>당사는 개인 데이터를 수집하지 않으므로 접근, 수정, 삭제, 이동성 또는 제한 요청의 대상이 되는 데이터가 없습니다. 그럼에도 불구하고, 모든 관할권의 사용자는 개인정보 관련 우려 사항에 대해 당사에 연락할 권리를 보유하며, 당사는 신속하게 답변할 것입니다.</p>
+    <p><strong>부모 및 보호자:</strong> iOS 설정에서 이용 가능한 기기의 스크린 타임 및 자녀 보호 기능을 통해 자녀의 앱 사용을 완전히 제어할 수 있습니다.</p>
+  </section>
+  <section id="ko-s13"><div class="section-head"><span class="section-num">13</span><h2>데이터 보존</h2></div>
+    <p>당사는 사용자 데이터를 보존하지 않습니다 — 보존할 것이 없습니다. 앱 내에서 생성된 모든 콘텐츠는 귀하의 기기에만 존재합니다. 기기에서 앱을 제거하면 언제든지 모든 앱 데이터를 삭제할 수 있습니다.</p>
+  </section>
+  <section id="ko-s14"><div class="section-head"><span class="section-num">14</span><h2>개인정보 처리방침 변경</h2></div>
+    <p>당사는 때때로 이 개인정보 처리방침을 업데이트할 수 있습니다. 모든 변경 사항은 이 방침 상단의 "최종 업데이트" 날짜를 업데이트함으로써 반영됩니다. 정기적으로 이 방침을 검토하시기 바랍니다.</p>
+    <p>아동으로부터 데이터를 수집하는 방식을 포함하여 데이터 관행을 중대하게 변경하는 경우, 당사는 사전에 눈에 띄게 알리고 해당 법률에 따라 검증 가능한 부모 동의를 얻을 것입니다.</p>
+  </section>
+  <section id="ko-s15"><div class="section-head"><span class="section-num">15</span><h2>문의하기</h2></div>
+    <p>이 개인정보 처리방침에 관한 질문, 우려 또는 요청이 있는 경우 — 부모 또는 보호자의 문의를 포함하여 — 당사에 연락해 주십시오:</p>
+    <div class="contact-card">
+      <p>당사는 모든 개인정보 문의에 30일 이내에 답변하는 것을 목표로 합니다.</p>
+      <div class="contact-row"><span class="label">이메일</span><a href="mailto:GLabsAI@outlook.com" class="value">GLabsAI@outlook.com</a></div>
+    </div>
+  </section>
+</main>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ SIMPLIFIED CHINESE -->
+<div class="lang-section" id="lang-zh">
+<main class="page">
+  <nav class="toc" aria-label="目录">
+    <div class="toc-title">目录</div>
+    <ol>
+      <li><a href="#zh-s1"><span class="num">01</span>简介</a></li>
+      <li><a href="#zh-s2"><span class="num">02</span>简短版本</a></li>
+      <li><a href="#zh-s3"><span class="num">03</span>数据收集</a></li>
+      <li><a href="#zh-s4"><span class="num">04</span>设备端AI处理</a></li>
+      <li><a href="#zh-s5"><span class="num">05</span>Apple平台与崩溃报告</a></li>
+      <li><a href="#zh-s6"><span class="num">06</span>第三方服务</a></li>
+      <li><a href="#zh-s7"><span class="num">07</span>儿童隐私</a></li>
+      <li><a href="#zh-s8"><span class="num">08</span>广告</a></li>
+      <li><a href="#zh-s9"><span class="num">09</span>应用内购买</a></li>
+      <li><a href="#zh-s10"><span class="num">10</span>数据安全</a></li>
+      <li><a href="#zh-s11"><span class="num">11</span>国际合规</a></li>
+      <li><a href="#zh-s12"><span class="num">12</span>您的权利</a></li>
+      <li><a href="#zh-s13"><span class="num">13</span>数据保留</a></li>
+      <li><a href="#zh-s14"><span class="num">14</span>政策变更</a></li>
+      <li><a href="#zh-s15"><span class="num">15</span>联系我们</a></li>
+    </ol>
+  </nav>
+  <section id="zh-s1"><div class="section-head"><span class="section-num">01</span><h2>简介</h2></div>
+    <p>Joju（"本应用"、"我们"或"我方"）致力于保护您的隐私——以及使用本应用的儿童的隐私。本隐私政策说明了Joju在您使用本应用时如何处理相关信息，本应用仅在Apple App Store上供iPhone和iPad使用。</p>
+    <p>请仔细阅读本政策。下载或使用本应用即表示您已阅读并理解本隐私政策。</p>
+  </section>
+  <section id="zh-s2"><div class="section-head"><span class="section-num">02</span><h2>简短版本</h2></div>
+    <div class="callout"><p><strong>我们不收集任何内容。我们不存储任何内容。我们不传输任何内容。</strong></p><p>Joju是一款儿童应用，完全在您的设备上使用设备端AI模型运行。所有处理——包括所有AI功能——都在您的iPhone或iPad上本地进行。任何类型的数据都不会被发送给我们、任何服务器或任何第三方。</p></div>
+  </section>
+  <section id="zh-s3"><div class="section-head"><span class="section-num">03</span><h2>数据收集</h2></div>
+    <p><strong>我们不收集任何个人数据——无论是儿童还是成人。</strong></p>
+    <p>Joju不收集、访问、存储、传输、共享或处理以下任何信息：</p>
+    <ul class="clean">
+      <li>个人标识符（姓名、电子邮件地址、Apple ID、设备ID等）</li>
+      <li>位置数据（精确或近似）</li>
+      <li>使用数据或行为分析</li>
+      <li>发送给我们的诊断或崩溃报告</li>
+      <li>用户生成的内容</li>
+      <li>照片、相机或麦克风输入（除非以下明确说明）</li>
+      <li>联系人、日历或任何其他设备数据</li>
+      <li>健康、财务或生物特征信息</li>
+      <li>浏览或搜索历史</li>
+      <li>广告标识符（IDFA或类似标识符）</li>
+    </ul>
+  </section>
+  <section id="zh-s4"><div class="section-head"><span class="section-num">04</span><h2>应用工作原理——仅限设备端AI处理</h2></div>
+    <p>Joju的所有功能，包括所有人工智能和机器学习功能，均完全在您的设备上使用Apple的设备端框架（如Core ML）执行。这意味着：</p>
+    <ul class="clean check">
+      <li><strong>所有AI模型在本地运行</strong>——没有任何输入或输出被发送到外部服务器或AI提供商。</li>
+      <li><strong>无需互联网连接</strong>即可使用任何核心应用功能。</li>
+      <li><strong>不会上传任何数据</strong>到任何服务器、云服务或远程端点。</li>
+      <li><strong>无需创建账户</strong>，也不可能创建账户。</li>
+      <li><strong>使用本应用不会有任何数据离开您的设备。</strong></li>
+    </ul>
+    <p>应用生成或处理的任何内容均完全保存在您的设备上，完全由您控制。</p>
+  </section>
+  <section id="zh-s5"><div class="section-head"><span class="section-num">05</span><h2>Apple平台服务与崩溃报告</h2></div>
+    <p>作为通过Apple App Store分发的应用，Joju受Apple标准iOS平台服务的约束。有两点重要事项需要了解：</p>
+    <div class="notice"><p><strong>崩溃报告（可选——设备级设置）</strong></p><p>Apple的iOS包含一项可选的系统级功能，可在应用崩溃时向应用开发者发送匿名崩溃报告。是否共享此数据完全由您通过<strong>设置→隐私与安全→分析与改进</strong>控制。如果启用，Apple可能仅出于修复技术问题的目的与我们共享匿名诊断崩溃数据。此数据不包含任何个人信息，受<a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple隐私政策</a>约束。</p></div>
+    <p><strong>App Store与应用内购买</strong><br>Apple根据<a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple隐私政策</a>独立收集与App Store下载和应用内购买相关的信息。我们不接收也无法访问与这些交易相关的付款或个人信息。</p>
+  </section>
+  <section id="zh-s6"><div class="section-head"><span class="section-num">06</span><h2>第三方服务</h2></div>
+    <p>Joju<strong>不</strong>集成任何收集或传输用户数据的第三方服务。具体来说，本应用<strong>不包含</strong>任何：</p>
+    <ul class="clean">
+      <li>第三方分析SDK（如Firebase、Mixpanel、Amplitude）</li>
+      <li>广告网络或SDK（如AdMob、Meta Audience Network）</li>
+      <li>崩溃报告工具（如Crashlytics、Sentry）</li>
+      <li>基于云的AI或机器学习API（如OpenAI、Google Gemini）</li>
+      <li>云存储服务</li>
+      <li>社交媒体SDK或登录功能</li>
+      <li>任何其他访问或传输用户数据的第三方SDK</li>
+    </ul>
+  </section>
+  <section id="zh-s7"><div class="section-head"><span class="section-num">07</span><h2>儿童隐私——我们的最高优先事项</h2></div>
+    <p>Joju专为儿童设计，保护儿童隐私是我们最重要的关注点。我们在全球范围内完全遵守以下儿童隐私法律：</p>
+    <div class="country-grid">
+      <div class="country-card"><span class="flag">🇺🇸</span><div class="region">美国</div><div class="law">COPPA</div><div class="desc">不收集13岁以下儿童的个人信息。</div></div>
+      <div class="country-card"><span class="flag">🇪🇺</span><div class="region">欧盟/欧洲经济区</div><div class="law">GDPR第8条</div><div class="desc">不收集16岁以下儿童的个人信息（或更低的国家门槛）。</div></div>
+      <div class="country-card"><span class="flag">🇬🇧</span><div class="region">英国</div><div class="law">英国GDPR·儿童守则</div><div class="desc">默认对所有儿童用户适用最高隐私保护标准。</div></div>
+      <div class="country-card"><span class="flag">🇨🇦</span><div class="region">加拿大</div><div class="law">PIPEDA</div><div class="desc">未经可验证的家长同意，不收集未成年人个人信息。</div></div>
+      <div class="country-card"><span class="flag">🇦🇺</span><div class="region">澳大利亚</div><div class="law">1988年隐私法</div><div class="desc">隐私设计标准保护所有用户，包括儿童。</div></div>
+      <div class="country-card"><span class="flag">🇧🇷</span><div class="region">巴西</div><div class="law">LGPD</div><div class="desc">未经家长或监护人同意，不处理儿童个人数据。</div></div>
+    </div>
+    <div class="callout"><p><strong>通过设计保护。</strong>由于本应用不收集任何数据，这些保护措施自动得到满足。没有数据可供收集、共享或滥用——无论是哪个国家、任何年龄的用户。</p></div>
+    <p>家长和监护人可以完全放心地使用本应用，因为在任何情况下都不会收集或共享有关其子女的任何信息。</p>
+  </section>
+  <section id="zh-s8"><div class="section-head"><span class="section-num">08</span><h2>广告</h2></div>
+    <p>Joju<strong>不包含任何形式的广告。</strong>我们不显示广告，也不使用广告标识符。本应用永远不会向儿童展示广告。</p>
+  </section>
+  <section id="zh-s9"><div class="section-head"><span class="section-num">09</span><h2>应用内购买</h2></div>
+    <p>如果本应用提供应用内购买，这些交易完全通过Apple App Store处理。我们不收集或处理任何付款信息。所有购买记录完全由Apple按照其条款和隐私政策处理。</p>
+  </section>
+  <section id="zh-s10"><div class="section-head"><span class="section-num">10</span><h2>数据安全</h2></div>
+    <p>由于我们不收集、存储或传输任何用户数据，我们这边没有需要保护的用户数据。应用内生成的所有内容均受您设备内置安全功能的保护，包括设备密码、面容ID、触控ID以及iOS的应用沙盒架构。</p>
+  </section>
+  <section id="zh-s11"><div class="section-head"><span class="section-num">11</span><h2>国际用户与全球合规</h2></div>
+    <p>Joju在全球范围内可用。由于我们不从任何国家的任何用户收集个人数据，国际隐私框架的数据传输、本地化和同意要求——包括GDPR（欧盟/欧洲经济区）、英国GDPR、CCPA/CPRA（加利福尼亚州）、PIPEDA（加拿大）、LGPD（巴西）、PDPA（泰国/新加坡）、POPIA（南非）等——均通过本应用的零收集架构得到满足。</p>
+    <p>由于从一开始就不收集个人数据，因此不存在跨境个人数据传输。</p>
+  </section>
+  <section id="zh-s12"><div class="section-head"><span class="section-num">12</span><h2>您的权利</h2></div>
+    <p>由于我们不收集个人数据，没有数据受访问、更正、删除、可携带或限制请求的约束。尽管如此，任何司法管辖区的用户仍保留就隐私相关问题联系我们的权利，我们将及时回复。</p>
+    <p><strong>对于家长和监护人：</strong>您可以通过iOS设置中可用的设备屏幕时间和家长控制功能，完全控制您孩子对本应用的使用。</p>
+  </section>
+  <section id="zh-s13"><div class="section-head"><span class="section-num">13</span><h2>数据保留</h2></div>
+    <p>我们不保留任何用户数据——没有任何可保留的内容。应用内生成的所有内容仅存在于您的设备上。您可以随时通过从设备上卸载本应用来删除所有应用数据。</p>
+  </section>
+  <section id="zh-s14"><div class="section-head"><span class="section-num">14</span><h2>本隐私政策的变更</h2></div>
+    <p>我们可能会不时更新本隐私政策。任何更改将通过更新本政策顶部的"最后更新"日期来反映。我们鼓励您定期查看本政策。</p>
+    <p>如果我们对数据实践进行重大变更——特别是以任何涉及收集儿童数据的方式——我们将提前发出明显通知，并在适用法律要求的情况下获得可验证的家长同意。</p>
+  </section>
+  <section id="zh-s15"><div class="section-head"><span class="section-num">15</span><h2>联系我们</h2></div>
+    <p>如果您对本隐私政策有任何问题、疑虑或请求——包括家长或监护人的任何询问——请联系我们：</p>
+    <div class="contact-card">
+      <p>我们的目标是在30天内回复所有隐私查询。</p>
+      <div class="contact-row"><span class="label">电子邮件</span><a href="mailto:GLabsAI@outlook.com" class="value">GLabsAI@outlook.com</a></div>
+    </div>
+  </section>
+</main>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ SPANISH -->
+<div class="lang-section" id="lang-es">
+<main class="page">
+  <nav class="toc" aria-label="Tabla de contenidos">
+    <div class="toc-title">Contenido</div>
+    <ol>
+      <li><a href="#es-s1"><span class="num">01</span>Introducción</a></li>
+      <li><a href="#es-s2"><span class="num">02</span>Versión Breve</a></li>
+      <li><a href="#es-s3"><span class="num">03</span>Recopilación de Datos</a></li>
+      <li><a href="#es-s4"><span class="num">04</span>IA en el Dispositivo</a></li>
+      <li><a href="#es-s5"><span class="num">05</span>Plataforma Apple e Informes de Fallos</a></li>
+      <li><a href="#es-s6"><span class="num">06</span>Servicios de Terceros</a></li>
+      <li><a href="#es-s7"><span class="num">07</span>Privacidad de los Niños</a></li>
+      <li><a href="#es-s8"><span class="num">08</span>Publicidad</a></li>
+      <li><a href="#es-s9"><span class="num">09</span>Compras en la App</a></li>
+      <li><a href="#es-s10"><span class="num">10</span>Seguridad de Datos</a></li>
+      <li><a href="#es-s11"><span class="num">11</span>Cumplimiento Internacional</a></li>
+      <li><a href="#es-s12"><span class="num">12</span>Sus Derechos</a></li>
+      <li><a href="#es-s13"><span class="num">13</span>Retención de Datos</a></li>
+      <li><a href="#es-s14"><span class="num">14</span>Cambios en la Política</a></li>
+      <li><a href="#es-s15"><span class="num">15</span>Contáctenos</a></li>
+    </ol>
+  </nav>
+  <section id="es-s1"><div class="section-head"><span class="section-num">01</span><h2>Introducción</h2></div>
+    <p>Joju ("la App", "nosotros", "nuestro" o "nos") está comprometido a proteger su privacidad — y la privacidad de los niños que utilizan la App. Esta Política de Privacidad explica cómo Joju maneja la información relacionada con su uso de la App, disponible exclusivamente en el Apple App Store para iPhone y iPad.</p>
+    <p>Por favor, lea esta política detenidamente. Al descargar o usar la App, usted reconoce que ha leído y comprendido esta Política de Privacidad.</p>
+  </section>
+  <section id="es-s2"><div class="section-head"><span class="section-num">02</span><h2>Versión Breve</h2></div>
+    <div class="callout"><p><strong>No recopilamos nada. No almacenamos nada. No transmitimos nada.</strong></p><p>Joju es una aplicación para niños que funciona completamente en su dispositivo utilizando modelos de IA locales. Todo el procesamiento — incluidas todas las funciones de IA — ocurre de forma local en su iPhone o iPad. Ningún dato de ningún tipo se envía a nosotros, a ningún servidor ni a terceros.</p></div>
+  </section>
+  <section id="es-s3"><div class="section-head"><span class="section-num">03</span><h2>Recopilación de Datos</h2></div>
+    <p><strong>No recopilamos ningún dato personal — ni de niños ni de adultos.</strong></p>
+    <p>Joju no recopila, accede, almacena, transmite, comparte ni procesa ninguna de las siguientes informaciones:</p>
+    <ul class="clean">
+      <li>Identificadores personales (nombre, dirección de correo electrónico, Apple ID, ID del dispositivo, etc.)</li>
+      <li>Datos de ubicación (precisos o aproximados)</li>
+      <li>Datos de uso o análisis de comportamiento</li>
+      <li>Diagnósticos o informes de fallos enviados a nosotros</li>
+      <li>Contenido generado por el usuario</li>
+      <li>Fotos, cámara o entrada de micrófono (salvo indicación explícita a continuación)</li>
+      <li>Contactos, calendarios u otros datos del dispositivo</li>
+      <li>Información de salud, financiera o biométrica</li>
+      <li>Historial de navegación o búsqueda</li>
+      <li>Identificadores publicitarios (IDFA o similares)</li>
+    </ul>
+  </section>
+  <section id="es-s4"><div class="section-head"><span class="section-num">04</span><h2>Cómo Funciona la App — Solo Procesamiento de IA en el Dispositivo</h2></div>
+    <p>Todas las funcionalidades de Joju, incluidas todas las características de inteligencia artificial y aprendizaje automático, se ejecutan completamente en su dispositivo usando los marcos de trabajo en el dispositivo de Apple (como Core ML). Esto significa:</p>
+    <ul class="clean check">
+      <li><strong>Todos los modelos de IA se ejecutan localmente</strong> en su dispositivo — ninguna entrada o salida se envía a servidores externos o proveedores de IA.</li>
+      <li><strong>No se requiere conexión a Internet</strong> para ninguna función principal de la App.</li>
+      <li><strong>No se sube ningún dato</strong> a ningún servidor, servicio en la nube o endpoint remoto.</li>
+      <li><strong>No se requiere crear una cuenta</strong> ni es posible hacerlo.</li>
+      <li><strong>Ningún dato sale de su dispositivo</strong> como resultado del uso de esta App.</li>
+    </ul>
+    <p>Cualquier contenido generado o procesado por la App permanece exclusivamente en su dispositivo y está totalmente bajo su control.</p>
+  </section>
+  <section id="es-s5"><div class="section-head"><span class="section-num">05</span><h2>Servicios de la Plataforma Apple e Informes de Fallos</h2></div>
+    <p>Como aplicación distribuida a través del Apple App Store, Joju está sujeto a los servicios estándar de la plataforma iOS de Apple. Hay dos aspectos importantes a tener en cuenta:</p>
+    <div class="notice"><p><strong>Informes de Fallos (Opcional — Configuración a Nivel de Dispositivo)</strong></p><p>iOS de Apple incluye una función opcional a nivel del sistema que puede enviar informes de fallos anónimos a los desarrolladores de aplicaciones. Si estos datos se comparten está completamente bajo su control a través de <strong>Ajustes → Privacidad y Seguridad → Análisis y Mejoras</strong>. Si está habilitado, Apple puede compartir datos de diagnóstico anonimizados con nosotros únicamente para corregir problemas técnicos. Estos datos no contienen información personal y están regidos por la <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Política de Privacidad de Apple</a>.</p></div>
+    <p><strong>App Store y Compras en la App</strong><br>Apple recopila de forma independiente información relacionada con las descargas del App Store y las compras en la app conforme a la <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Política de Privacidad de Apple</a>. No recibimos ni tenemos acceso a información de pago o personal asociada con estas transacciones.</p>
+  </section>
+  <section id="es-s6"><div class="section-head"><span class="section-num">06</span><h2>Servicios de Terceros</h2></div>
+    <p>Joju <strong>no</strong> integra ningún servicio de terceros que recopile o transmita datos de usuarios. Específicamente, la App no contiene <strong>ningún</strong>:</p>
+    <ul class="clean">
+      <li>SDK de análisis de terceros (p. ej., Firebase, Mixpanel, Amplitude)</li>
+      <li>Redes o SDK publicitarios (p. ej., AdMob, Meta Audience Network)</li>
+      <li>Herramientas de informes de fallos (p. ej., Crashlytics, Sentry)</li>
+      <li>API de IA o ML basadas en la nube (p. ej., OpenAI, Google Gemini)</li>
+      <li>Servicios de almacenamiento en la nube</li>
+      <li>SDK de redes sociales o funciones de inicio de sesión</li>
+      <li>Cualquier otro SDK de terceros que acceda o transmita datos de usuarios</li>
+    </ul>
+  </section>
+  <section id="es-s7"><div class="section-head"><span class="section-num">07</span><h2>Privacidad de los Niños — Nuestra Máxima Prioridad</h2></div>
+    <p>Joju está diseñado específicamente para niños, y su privacidad es nuestra principal preocupación. Cumplimos plenamente con las siguientes leyes de privacidad infantil a nivel mundial:</p>
+    <div class="country-grid">
+      <div class="country-card"><span class="flag">🇺🇸</span><div class="region">Estados Unidos</div><div class="law">COPPA</div><div class="desc">No se recopila información personal de niños menores de 13 años.</div></div>
+      <div class="country-card"><span class="flag">🇪🇺</span><div class="region">Unión Europea / EEE</div><div class="law">RGPD Artículo 8</div><div class="desc">No se recopila información personal de niños menores de 16 años (o umbral nacional inferior).</div></div>
+      <div class="country-card"><span class="flag">🇬🇧</span><div class="region">Reino Unido</div><div class="law">UK RGPD · Código de los Niños</div><div class="desc">El más alto estándar de protección de privacidad aplicado por defecto a todos los usuarios niños.</div></div>
+      <div class="country-card"><span class="flag">🇨🇦</span><div class="region">Canadá</div><div class="law">PIPEDA</div><div class="desc">No se recopila información personal de menores sin consentimiento parental verificado.</div></div>
+      <div class="country-card"><span class="flag">🇦🇺</span><div class="region">Australia</div><div class="law">Privacy Act 1988</div><div class="desc">Estándares de privacidad por diseño que protegen a todos los usuarios, incluidos los niños.</div></div>
+      <div class="country-card"><span class="flag">🇧🇷</span><div class="region">Brasil</div><div class="law">LGPD</div><div class="desc">No se procesan datos personales de niños sin consentimiento de padres o tutores.</div></div>
+    </div>
+    <div class="callout"><p><strong>Protegido por diseño.</strong> Dado que la App no recopila ningún dato, estas protecciones se cumplen automáticamente. No hay datos que recopilar, compartir o utilizar de forma indebida — de ningún usuario, de ninguna edad, en ningún país.</p></div>
+    <p>Padres y tutores pueden usar esta App con plena confianza de que ninguna información sobre su hijo se recopila ni se comparte bajo ninguna circunstancia.</p>
+  </section>
+  <section id="es-s8"><div class="section-head"><span class="section-num">08</span><h2>Publicidad</h2></div>
+    <p>Joju no contiene <strong>ningún tipo de publicidad.</strong> No mostramos anuncios ni utilizamos identificadores publicitarios. La App nunca mostrará publicidad a los niños.</p>
+  </section>
+  <section id="es-s9"><div class="section-head"><span class="section-num">09</span><h2>Compras en la App</h2></div>
+    <p>Si la App ofrece compras en la app, estas transacciones se procesan exclusivamente a través del App Store de Apple. No recopilamos ni procesamos ninguna información de pago. Todos los registros de compra son gestionados únicamente por Apple conforme a sus términos y política de privacidad.</p>
+  </section>
+  <section id="es-s10"><div class="section-head"><span class="section-num">10</span><h2>Seguridad de Datos</h2></div>
+    <p>Como no recopilamos, almacenamos ni transmitimos ningún dato de usuario, no hay datos de usuario de nuestra parte que proteger. Todo el contenido generado dentro de la App está protegido por las funciones de seguridad integradas de su dispositivo, incluido el código de acceso del dispositivo, Face ID, Touch ID y la arquitectura de sandbox de aplicaciones de iOS.</p>
+  </section>
+  <section id="es-s11"><div class="section-head"><span class="section-num">11</span><h2>Usuarios Internacionales y Cumplimiento Global</h2></div>
+    <p>Joju está disponible en todo el mundo. Dado que no recopilamos datos personales de ningún usuario en ningún país, los requisitos de transferencia de datos, localización y consentimiento de los marcos internacionales de privacidad — incluidos RGPD (UE/EEE), UK RGPD, CCPA/CPRA (California), PIPEDA (Canadá), LGPD (Brasil), PDPA (Tailandia/Singapur), POPIA (Sudáfrica) y otros — se satisfacen mediante la arquitectura de cero recopilación de la App.</p>
+    <p>No se transfieren datos personales a través de fronteras porque no se recopilan datos personales en primer lugar.</p>
+  </section>
+  <section id="es-s12"><div class="section-head"><span class="section-num">12</span><h2>Sus Derechos</h2></div>
+    <p>Dado que no recopilamos datos personales, no hay datos sujetos a solicitudes de acceso, corrección, eliminación, portabilidad o restricción. No obstante, los usuarios en cualquier jurisdicción conservan el derecho de contactarnos con preocupaciones relacionadas con la privacidad, y responderemos de manera oportuna.</p>
+    <p><strong>Para padres y tutores:</strong> Tiene control total sobre el uso de la App por parte de su hijo a través de las funciones de Screen Time y controles parentales de su dispositivo, disponibles en los Ajustes de iOS.</p>
+  </section>
+  <section id="es-s13"><div class="section-head"><span class="section-num">13</span><h2>Retención de Datos</h2></div>
+    <p>No retenemos ningún dato de usuario — no hay nada que retener. Todo el contenido generado dentro de la App existe únicamente en su dispositivo. Puede eliminar todos los datos de la App en cualquier momento desinstalando la App de su dispositivo.</p>
+  </section>
+  <section id="es-s14"><div class="section-head"><span class="section-num">14</span><h2>Cambios en Esta Política de Privacidad</h2></div>
+    <p>Podemos actualizar esta Política de Privacidad de vez en cuando. Cualquier cambio se reflejará actualizando la fecha de "Última Actualización" en la parte superior de esta política. Le recomendamos que revise esta política periódicamente.</p>
+    <p>Si alguna vez modificamos sustancialmente nuestras prácticas de datos — particularmente de alguna manera que implique recopilar datos de niños — proporcionaremos un aviso previo destacado y obtendremos el consentimiento parental verificable donde lo exija la ley aplicable.</p>
+  </section>
+  <section id="es-s15"><div class="section-head"><span class="section-num">15</span><h2>Contáctenos</h2></div>
+    <p>Si tiene preguntas, inquietudes o solicitudes sobre esta Política de Privacidad — incluidas consultas de padres o tutores — contáctenos:</p>
+    <div class="contact-card">
+      <p>Nuestro objetivo es responder a todas las consultas de privacidad en un plazo de 30 días.</p>
+      <div class="contact-row"><span class="label">Correo</span><a href="mailto:GLabsAI@outlook.com" class="value">GLabsAI@outlook.com</a></div>
+    </div>
+  </section>
+</main>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ JAPANESE -->
+<div class="lang-section" id="lang-ja">
+<main class="page">
+  <nav class="toc" aria-label="目次">
+    <div class="toc-title">目次</div>
+    <ol>
+      <li><a href="#ja-s1"><span class="num">01</span>はじめに</a></li>
+      <li><a href="#ja-s2"><span class="num">02</span>要約</a></li>
+      <li><a href="#ja-s3"><span class="num">03</span>データ収集</a></li>
+      <li><a href="#ja-s4"><span class="num">04</span>デバイス上のAI処理</a></li>
+      <li><a href="#ja-s5"><span class="num">05</span>Appleプラットフォームとクラッシュレポート</a></li>
+      <li><a href="#ja-s6"><span class="num">06</span>サードパーティサービス</a></li>
+      <li><a href="#ja-s7"><span class="num">07</span>子どものプライバシー</a></li>
+      <li><a href="#ja-s8"><span class="num">08</span>広告</a></li>
+      <li><a href="#ja-s9"><span class="num">09</span>アプリ内課金</a></li>
+      <li><a href="#ja-s10"><span class="num">10</span>データセキュリティ</a></li>
+      <li><a href="#ja-s11"><span class="num">11</span>国際コンプライアンス</a></li>
+      <li><a href="#ja-s12"><span class="num">12</span>お客様の権利</a></li>
+      <li><a href="#ja-s13"><span class="num">13</span>データ保持</a></li>
+      <li><a href="#ja-s14"><span class="num">14</span>ポリシーの変更</a></li>
+      <li><a href="#ja-s15"><span class="num">15</span>お問い合わせ</a></li>
+    </ol>
+  </nav>
+  <section id="ja-s1"><div class="section-head"><span class="section-num">01</span><h2>はじめに</h2></div>
+    <p>Joju（「本アプリ」、「当社」、「私たち」）は、お客様のプライバシー、そして本アプリを使用する子どものプライバシーを保護することに取り組んでいます。このプライバシーポリシーは、iPhone・iPad向けApple App Storeでのみ提供される本アプリのご利用に際し、Jojoがどのように情報を取り扱うかを説明するものです。</p>
+    <p>このポリシーを注意深くお読みください。本アプリをダウンロードまたはご利用になることで、本プライバシーポリシーを読み、理解したことに同意したものとみなされます。</p>
+  </section>
+  <section id="ja-s2"><div class="section-head"><span class="section-num">02</span><h2>要約</h2></div>
+    <div class="callout"><p><strong>何も収集しません。何も保存しません。何も送信しません。</strong></p><p>Jojoは、デバイス上のAIモデルを使用してお使いのデバイス上で完全に動作する子ども向けアプリです。AIを活用した機能を含む、すべての処理はiPhoneまたはiPad上でローカルに行われます。いかなる種類のデータも当社・サーバー・第三者に送信されることはありません。</p></div>
+  </section>
+  <section id="ja-s3"><div class="section-head"><span class="section-num">03</span><h2>データ収集</h2></div>
+    <p><strong>子どもも大人も含め、一切の個人データを収集しません。</strong></p>
+    <p>Jojoは以下のいずれの情報も収集・アクセス・保存・送信・共有・処理しません：</p>
+    <ul class="clean">
+      <li>個人識別情報（氏名、メールアドレス、Apple ID、デバイスIDなど）</li>
+      <li>位置情報（正確または概算）</li>
+      <li>使用データや行動分析</li>
+      <li>当社に送信される診断データやクラッシュレポート</li>
+      <li>ユーザー生成コンテンツ</li>
+      <li>写真、カメラ、またはマイク入力（以下に明示的に記載されている場合を除く）</li>
+      <li>連絡先、カレンダー、その他のデバイスデータ</li>
+      <li>健康、財務、または生体認証情報</li>
+      <li>閲覧履歴または検索履歴</li>
+      <li>広告識別子（IDFAまたは類似のもの）</li>
+    </ul>
+  </section>
+  <section id="ja-s4"><div class="section-head"><span class="section-num">04</span><h2>アプリの仕組み — デバイス上のAI処理のみ</h2></div>
+    <p>人工知能・機械学習機能を含むJojoのすべての機能は、AppleのデバイスオンフレームワークなどのApple フレームワーク（Core MLなど）を使用してお使いのデバイス上で完全に実行されます。これは次のことを意味します：</p>
+    <ul class="clean check">
+      <li><strong>すべてのAIモデルはローカルで動作します</strong>——いかなる入力・出力も外部サーバーやAIプロバイダーに送信されません。</li>
+      <li><strong>コアアプリ機能にインターネット接続は不要です。</strong></li>
+      <li><strong>データのアップロードは一切行われません</strong>——サーバー、クラウドサービス、リモートエンドポイントへも同様です。</li>
+      <li><strong>アカウント作成は不要であり、不可能です。</strong></li>
+      <li><strong>本アプリの使用によりデータがデバイスから送出されることはありません。</strong></li>
+    </ul>
+    <p>アプリで生成または処理されたコンテンツはすべてお使いのデバイスのみに保存され、完全にお客様の管理下に置かれます。</p>
+  </section>
+  <section id="ja-s5"><div class="section-head"><span class="section-num">05</span><h2>Appleプラットフォームサービスとクラッシュレポート</h2></div>
+    <p>Apple App Storeを通じて配布されるアプリとして、JojoはAppleの標準iOSプラットフォームサービスの対象となります。重要な点が2つあります：</p>
+    <div class="notice"><p><strong>クラッシュレポート（任意 — デバイスレベルの設定）</strong></p><p>AppleのiOSには、アプリがクラッシュした際にアプリ開発者に匿名のクラッシュレポートを送信できる任意のシステムレベル機能が含まれています。このデータの共有は<strong>設定→プライバシーとセキュリティ→解析と改善</strong>から完全にご自身でコントロールできます。有効にした場合、Appleは技術的な問題を修正する目的のみで匿名化された診断クラッシュデータを当社と共有することがあります。このデータには個人情報は含まれず、<a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Appleのプライバシーポリシー</a>に準拠しています。</p></div>
+    <p><strong>App Storeとアプリ内課金</strong><br>Appleは<a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Appleのプライバシーポリシー</a>に従い、App Storeのダウンロードおよびアプリ内課金に関する情報を独自に収集します。当社はこれらの取引に関連する支払いや個人情報を受け取ったり、アクセスしたりすることはありません。</p>
+  </section>
+  <section id="ja-s6"><div class="section-head"><span class="section-num">06</span><h2>サードパーティサービス</h2></div>
+    <p>Jojoはユーザーデータを収集または送信するサードパーティサービスを<strong>一切統合していません</strong>。具体的に、アプリには以下が<strong>含まれません</strong>：</p>
+    <ul class="clean">
+      <li>サードパーティ分析SDK（例：Firebase、Mixpanel、Amplitude）</li>
+      <li>広告ネットワークまたはSDK（例：AdMob、Meta Audience Network）</li>
+      <li>クラッシュレポートツール（例：Crashlytics、Sentry）</li>
+      <li>クラウドベースのAIまたはML API（例：OpenAI、Google Gemini）</li>
+      <li>クラウドストレージサービス</li>
+      <li>ソーシャルメディアSDKまたはログイン機能</li>
+      <li>ユーザーデータにアクセスまたは送信するその他のサードパーティSDK</li>
+    </ul>
+  </section>
+  <section id="ja-s7"><div class="section-head"><span class="section-num">07</span><h2>子どものプライバシー — 最優先事項</h2></div>
+    <p>Jojoは特に子ども向けに設計されており、子どものプライバシー保護が当社の最重要課題です。当社はグローバルに以下の子どものプライバシー法を完全に遵守しています：</p>
+    <div class="country-grid">
+      <div class="country-card"><span class="flag">🇺🇸</span><div class="region">アメリカ合衆国</div><div class="law">COPPA</div><div class="desc">13歳未満の子どもの個人情報は収集しません。</div></div>
+      <div class="country-card"><span class="flag">🇪🇺</span><div class="region">EU/EEA</div><div class="law">GDPR第8条</div><div class="desc">16歳未満（または国内基準が低い場合はその年齢）の子どもの個人情報は収集しません。</div></div>
+      <div class="country-card"><span class="flag">🇬🇧</span><div class="region">英国</div><div class="law">UK GDPR・子ども向け規範</div><div class="desc">すべての子どもユーザーにデフォルトで最高水準のプライバシー保護を適用。</div></div>
+      <div class="country-card"><span class="flag">🇨🇦</span><div class="region">カナダ</div><div class="law">PIPEDA</div><div class="desc">確認可能な保護者の同意なしに未成年者の個人情報は収集しません。</div></div>
+      <div class="country-card"><span class="flag">🇦🇺</span><div class="region">オーストラリア</div><div class="law">1988年プライバシー法</div><div class="desc">子どもを含むすべてのユーザーを保護するプライバシー・バイ・デザイン基準。</div></div>
+      <div class="country-card"><span class="flag">🇧🇷</span><div class="region">ブラジル</div><div class="law">LGPD</div><div class="desc">保護者の同意なしに子どもの個人データを処理しません。</div></div>
+    </div>
+    <div class="callout"><p><strong>設計によって保護されています。</strong>アプリはいかなるデータも収集しないため、これらの保護措置は自動的に満たされています。いかなる国の、いかなる年齢のユーザーからも、収集・共有・悪用されるデータは存在しません。</p></div>
+    <p>保護者の方は、いかなる状況においても子どもに関する情報が収集・共有されないことを完全に信頼して本アプリをご利用いただけます。</p>
+  </section>
+  <section id="ja-s8"><div class="section-head"><span class="section-num">08</span><h2>広告</h2></div>
+    <p>Jojoには<strong>いかなる種類の広告も含まれていません。</strong>広告を表示せず、広告識別子も使用しません。本アプリは子どもに広告を表示することは決してありません。</p>
+  </section>
+  <section id="ja-s9"><div class="section-head"><span class="section-num">09</span><h2>アプリ内課金</h2></div>
+    <p>本アプリがアプリ内課金を提供する場合、これらの取引はApple App Storeを通じてのみ処理されます。当社は支払い情報を収集または処理しません。すべての購入記録はAppleの利用規約およびプライバシーポリシーに従い、Appleのみが管理します。</p>
+  </section>
+  <section id="ja-s10"><div class="section-head"><span class="section-num">10</span><h2>データセキュリティ</h2></div>
+    <p>当社はユーザーデータを収集・保存・送信しないため、当社側にセキュリティを確保すべきユーザーデータは存在しません。アプリ内で生成されたすべてのコンテンツは、デバイスのパスコード、Face ID、Touch ID、iOSのアプリケーションサンドボックスアーキテクチャを含む、デバイスの組み込みセキュリティ機能によって保護されます。</p>
+  </section>
+  <section id="ja-s11"><div class="section-head"><span class="section-num">11</span><h2>国際ユーザーとグローバルコンプライアンス</h2></div>
+    <p>Jojoは世界中でご利用いただけます。いかなる国のいかなるユーザーからも個人データを収集しないため、GDPR（EU/EEA）、UK GDPR、CCPA/CPRA（カリフォルニア州）、PIPEDA（カナダ）、LGPD（ブラジル）、PDPA（タイ/シンガポール）、POPIA（南アフリカ）等の国際的プライバシーフレームワークのデータ移転・現地化・同意要件は、アプリのゼロ収集アーキテクチャによって満たされています。</p>
+    <p>個人データはそもそも収集されないため、国境を越えた個人データの移転は行われません。</p>
+  </section>
+  <section id="ja-s12"><div class="section-head"><span class="section-num">12</span><h2>お客様の権利</h2></div>
+    <p>当社は個人データを収集しないため、アクセス・訂正・削除・ポータビリティ・制限の請求の対象となるデータは存在しません。それでも、いかなる管轄のユーザーもプライバシーに関する懸念について当社に連絡する権利を保持しており、当社は迅速に対応します。</p>
+    <p><strong>保護者の方へ：</strong>iOSの設定から利用可能なデバイスのスクリーンタイムおよびペアレンタルコントロール機能を通じて、お子様の本アプリの使用を完全に管理することができます。</p>
+  </section>
+  <section id="ja-s13"><div class="section-head"><span class="section-num">13</span><h2>データ保持</h2></div>
+    <p>当社はユーザーデータを保持しません——保持すべきものが何もありません。アプリ内で生成されたすべてのコンテンツはお使いのデバイスのみに存在します。デバイスから本アプリをアンインストールすることで、いつでもすべてのアプリデータを削除できます。</p>
+  </section>
+  <section id="ja-s14"><div class="section-head"><span class="section-num">14</span><h2>このプライバシーポリシーの変更</h2></div>
+    <p>当社はこのプライバシーポリシーを随時更新することがあります。変更は、本ポリシー上部の「最終更新日」を更新することで反映されます。定期的に本ポリシーをご確認いただくことをお勧めします。</p>
+    <p>子どものデータ収集に関する方法を含め、データの取り扱いを重大に変更する場合は、事前に目立つ形でお知らせし、適用法が求める場合は保護者の確認可能な同意を取得します。</p>
+  </section>
+  <section id="ja-s15"><div class="section-head"><span class="section-num">15</span><h2>お問い合わせ</h2></div>
+    <p>本プライバシーポリシーに関するご質問、ご懸念、またはご要望（保護者からのお問い合わせを含む）がございましたら、お問い合わせください：</p>
+    <div class="contact-card">
+      <p>プライバシーに関するお問い合わせには30日以内にご返答することを目指しています。</p>
+      <div class="contact-row"><span class="label">メール</span><a href="mailto:GLabsAI@outlook.com" class="value">GLabsAI@outlook.com</a></div>
+    </div>
+  </section>
+</main>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ ITALIAN -->
+<div class="lang-section" id="lang-it">
+<main class="page">
+  <nav class="toc" aria-label="Indice">
+    <div class="toc-title">Indice</div>
+    <ol>
+      <li><a href="#it-s1"><span class="num">01</span>Introduzione</a></li>
+      <li><a href="#it-s2"><span class="num">02</span>Versione Breve</a></li>
+      <li><a href="#it-s3"><span class="num">03</span>Raccolta dei Dati</a></li>
+      <li><a href="#it-s4"><span class="num">04</span>Elaborazione AI sul Dispositivo</a></li>
+      <li><a href="#it-s5"><span class="num">05</span>Piattaforma Apple e Report di Crash</a></li>
+      <li><a href="#it-s6"><span class="num">06</span>Servizi di Terze Parti</a></li>
+      <li><a href="#it-s7"><span class="num">07</span>Privacy dei Minori</a></li>
+      <li><a href="#it-s8"><span class="num">08</span>Pubblicità</a></li>
+      <li><a href="#it-s9"><span class="num">09</span>Acquisti in-App</a></li>
+      <li><a href="#it-s10"><span class="num">10</span>Sicurezza dei Dati</a></li>
+      <li><a href="#it-s11"><span class="num">11</span>Conformità Internazionale</a></li>
+      <li><a href="#it-s12"><span class="num">12</span>I Tuoi Diritti</a></li>
+      <li><a href="#it-s13"><span class="num">13</span>Conservazione dei Dati</a></li>
+      <li><a href="#it-s14"><span class="num">14</span>Modifiche alla Policy</a></li>
+      <li><a href="#it-s15"><span class="num">15</span>Contattaci</a></li>
+    </ol>
+  </nav>
+  <section id="it-s1"><div class="section-head"><span class="section-num">01</span><h2>Introduzione</h2></div>
+    <p>Joju ("l'App", "noi", "nostro" o "ci") si impegna a proteggere la tua privacy — e la privacy dei bambini che utilizzano l'App. Questa Informativa sulla Privacy spiega come Joju gestisce le informazioni relative all'utilizzo dell'App, disponibile esclusivamente sull'Apple App Store per iPhone e iPad.</p>
+    <p>Ti preghiamo di leggere attentamente questa informativa. Scaricando o utilizzando l'App, riconosci di aver letto e compreso questa Informativa sulla Privacy.</p>
+  </section>
+  <section id="it-s2"><div class="section-head"><span class="section-num">02</span><h2>Versione Breve</h2></div>
+    <div class="callout"><p><strong>Non raccogliamo nulla. Non memorizziamo nulla. Non trasmettiamo nulla.</strong></p><p>Joju è un'applicazione per bambini che funziona interamente sul tuo dispositivo utilizzando modelli di IA locali. Tutte le elaborazioni — incluse tutte le funzionalità di IA — avvengono localmente sul tuo iPhone o iPad. Nessun dato di alcun tipo viene mai inviato a noi, a server o a terze parti.</p></div>
+  </section>
+  <section id="it-s3"><div class="section-head"><span class="section-num">03</span><h2>Raccolta dei Dati</h2></div>
+    <p><strong>Non raccogliamo alcun dato personale — né da bambini né da adulti.</strong></p>
+    <p>Joju non raccoglie, accede, memorizza, trasmette, condivide o elabora nessuna delle seguenti informazioni:</p>
+    <ul class="clean">
+      <li>Identificatori personali (nome, indirizzo email, Apple ID, ID dispositivo, ecc.)</li>
+      <li>Dati di localizzazione (precisi o approssimativi)</li>
+      <li>Dati di utilizzo o analisi comportamentali</li>
+      <li>Diagnostica o report di crash inviati a noi</li>
+      <li>Contenuti generati dagli utenti</li>
+      <li>Foto, fotocamera o input del microfono (salvo indicazione esplicita di seguito)</li>
+      <li>Contatti, calendari o qualsiasi altro dato del dispositivo</li>
+      <li>Informazioni sanitarie, finanziarie o biometriche</li>
+      <li>Cronologia di navigazione o ricerca</li>
+      <li>Identificatori pubblicitari (IDFA o simili)</li>
+    </ul>
+  </section>
+  <section id="it-s4"><div class="section-head"><span class="section-num">04</span><h2>Come Funziona l'App — Solo Elaborazione IA sul Dispositivo</h2></div>
+    <p>Tutte le funzionalità di Joju, incluse tutte le funzioni di intelligenza artificiale e apprendimento automatico, vengono eseguite interamente sul tuo dispositivo utilizzando i framework on-device di Apple (come Core ML). Ciò significa:</p>
+    <ul class="clean check">
+      <li><strong>Tutti i modelli di IA girano localmente</strong> sul tuo dispositivo — nessun input o output viene inviato a server esterni o fornitori di IA.</li>
+      <li><strong>Non è richiesta connessione Internet</strong> per nessuna funzionalità principale dell'App.</li>
+      <li><strong>Nessun dato viene caricato</strong> su server, servizi cloud o endpoint remoti.</li>
+      <li><strong>Non è richiesta né possibile la creazione di un account.</strong></li>
+      <li><strong>Nessun dato lascia il tuo dispositivo</strong> a seguito dell'utilizzo di questa App.</li>
+    </ul>
+    <p>Qualsiasi contenuto generato o elaborato dall'App rimane esclusivamente sul tuo dispositivo e ​è completamente sotto il tuo controllo.</p>
+  </section>
+  <section id="it-s5"><div class="section-head"><span class="section-num">05</span><h2>Servizi della Piattaforma Apple e Report di Crash</h2></div>
+    <p>In quanto app distribuita attraverso l'Apple App Store, Joju è soggetto ai servizi standard della piattaforma iOS di Apple. Ci sono due aspetti importanti da tenere a mente:</p>
+    <div class="notice"><p><strong>Report di Crash (Opzionale — Impostazione a Livello di Dispositivo)</strong></p><p>iOS di Apple include una funzione opzionale a livello di sistema che può inviare report di crash anonimi agli sviluppatori di app. La condivisione di questi dati è completamente sotto il tuo controllo tramite <strong>Impostazioni → Privacy e Sicurezza → Analisi e Miglioramenti</strong>. Se abilitata, Apple potrebbe condividere con noi dati diagnostici anonimizzati esclusivamente per risolvere problemi tecnici. Questi dati non contengono informazioni personali e sono regolati dalla <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Informativa sulla Privacy di Apple</a>.</p></div>
+    <p><strong>App Store e Acquisti in-App</strong><br>Apple raccoglie indipendentemente informazioni relative ai download dell'App Store e agli acquisti in-app in conformità con l'<a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Informativa sulla Privacy di Apple</a>. Non riceviamo né abbiamo accesso alle informazioni di pagamento o personali associate a tali transazioni.</p>
+  </section>
+  <section id="it-s6"><div class="section-head"><span class="section-num">06</span><h2>Servizi di Terze Parti</h2></div>
+    <p>Joju <strong>non</strong> integra alcun servizio di terze parti che raccoglie o trasmette dati degli utenti. Nello specifico, l'App non contiene <strong>alcun</strong>:</p>
+    <ul class="clean">
+      <li>SDK di analisi di terze parti (es. Firebase, Mixpanel, Amplitude)</li>
+      <li>Reti o SDK pubblicitari (es. AdMob, Meta Audience Network)</li>
+      <li>Strumenti di report di crash (es. Crashlytics, Sentry)</li>
+      <li>API di IA o ML basate su cloud (es. OpenAI, Google Gemini)</li>
+      <li>Servizi di archiviazione cloud</li>
+      <li>SDK di social media o funzioni di login</li>
+      <li>Qualsiasi altro SDK di terze parti che accede o trasmette dati degli utenti</li>
+    </ul>
+  </section>
+  <section id="it-s7"><div class="section-head"><span class="section-num">07</span><h2>Privacy dei Minori — La Nostra Massima Priorità</h2></div>
+    <p>Joju è progettato specificamente per i bambini, e la loro privacy è la nostra principale preoccupazione. Rispettiamo pienamente le seguenti leggi sulla privacy dei minori su base globale:</p>
+    <div class="country-grid">
+      <div class="country-card"><span class="flag">🇺🇸</span><div class="region">Stati Uniti</div><div class="law">COPPA</div><div class="desc">Nessuna informazione personale raccolta da bambini sotto i 13 anni.</div></div>
+      <div class="country-card"><span class="flag">🇪🇺</span><div class="region">Unione Europea / SEE</div><div class="law">GDPR Articolo 8</div><div class="desc">Nessuna informazione personale da bambini sotto i 16 anni (o soglia nazionale inferiore).</div></div>
+      <div class="country-card"><span class="flag">🇬🇧</span><div class="region">Regno Unito</div><div class="law">UK GDPR · Codice Minori</div><div class="desc">Il più alto standard di protezione della privacy applicato per default a tutti gli utenti minori.</div></div>
+      <div class="country-card"><span class="flag">🇨🇦</span><div class="region">Canada</div><div class="law">PIPEDA</div><div class="desc">Nessuna informazione personale raccolta da minori senza consenso genitoriale verificato.</div></div>
+      <div class="country-card"><span class="flag">🇦🇺</span><div class="region">Australia</div><div class="law">Privacy Act 1988</div><div class="desc">Standard privacy-by-design a tutela di tutti gli utenti, inclusi i bambini.</div></div>
+      <div class="country-card"><span class="flag">🇧🇷</span><div class="region">Brasile</div><div class="law">LGPD</div><div class="desc">Nessun dato personale di bambini elaborato senza consenso di genitori o tutori.</div></div>
+    </div>
+    <div class="callout"><p><strong>Protetto per design.</strong> Poiché l'App non raccoglie alcun dato, queste protezioni sono soddisfatte automaticamente. Non ci sono dati da raccogliere, condividere o utilizzare in modo improprio — da nessun utente, di nessuna età, in nessun paese.</p></div>
+    <p>Genitori e tutori possono utilizzare questa App con la piena certezza che nessuna informazione sul loro figlio viene raccolta o condivisa in nessuna circostanza.</p>
+  </section>
+  <section id="it-s8"><div class="section-head"><span class="section-num">08</span><h2>Pubblicità</h2></div>
+    <p>Joju non contiene <strong>pubblicità di alcun tipo.</strong> Non mostriamo annunci e non utilizziamo identificatori pubblicitari. L'App non mostrerà mai pubblicità ai bambini.</p>
+  </section>
+  <section id="it-s9"><div class="section-head"><span class="section-num">09</span><h2>Acquisti in-App</h2></div>
+    <p>Se l'App offre acquisti in-app, queste transazioni vengono elaborate esclusivamente tramite l'App Store di Apple. Non raccogliamo né elaboriamo alcuna informazione di pagamento. Tutti i registri degli acquisti sono gestiti esclusivamente da Apple in conformità con i propri termini e informativa sulla privacy.</p>
+  </section>
+  <section id="it-s10"><div class="section-head"><span class="section-num">10</span><h2>Sicurezza dei Dati</h2></div>
+    <p>Poiché non raccogliamo, memorizziamo o trasmettiamo dati degli utenti, non ci sono dati degli utenti da proteggere da parte nostra. Tutti i contenuti generati all'interno dell'App sono protetti dalle funzioni di sicurezza integrate del tuo dispositivo, inclusi il codice di accesso del dispositivo, Face ID, Touch ID e l'architettura di sandboxing delle applicazioni di iOS.</p>
+  </section>
+  <section id="it-s11"><div class="section-head"><span class="section-num">11</span><h2>Utenti Internazionali e Conformità Globale</h2></div>
+    <p>Joju è disponibile in tutto il mondo. Poiché non raccogliamo dati personali da nessun utente in nessun paese, i requisiti di trasferimento dei dati, localizzazione e consenso dei framework internazionali sulla privacy — inclusi GDPR (UE/SEE), UK GDPR, CCPA/CPRA (California), PIPEDA (Canada), LGPD (Brasile), PDPA (Tailandia/Singapore), POPIA (Sudafrica) e altri — sono soddisfatti dall'architettura a zero raccolta dell'App.</p>
+    <p>Nessun dato personale viene trasferito oltre i confini nazionali perché nessun dato personale viene raccolto in primo luogo.</p>
+  </section>
+  <section id="it-s12"><div class="section-head"><span class="section-num">12</span><h2>I Tuoi Diritti</h2></div>
+    <p>Poiché non raccogliamo dati personali, non esistono dati soggetti a richieste di accesso, rettifica, cancellazione, portabilità o limitazione. Tuttavia, gli utenti di qualsiasi giurisdizione conservano il diritto di contattarci per preoccupazioni legate alla privacy, e risponderemo tempestivamente.</p>
+    <p><strong>Per genitori e tutori:</strong> Hai il pieno controllo sull'utilizzo dell'App da parte di tuo figlio attraverso le funzionalità Tempo di utilizzo e Controllo genitori del tuo dispositivo, disponibili nelle Impostazioni di iOS.</p>
+  </section>
+  <section id="it-s13"><div class="section-head"><span class="section-num">13</span><h2>Conservazione dei Dati</h2></div>
+    <p>Non conserviamo dati degli utenti — non c'è nulla da conservare. Tutti i contenuti generati all'interno dell'App esistono esclusivamente sul tuo dispositivo. Puoi eliminare tutti i dati dell'App in qualsiasi momento disinstallando l'App dal tuo dispositivo.</p>
+  </section>
+  <section id="it-s14"><div class="section-head"><span class="section-num">14</span><h2>Modifiche alla presente Informativa sulla Privacy</h2></div>
+    <p>Potremmo aggiornare periodicamente questa Informativa sulla Privacy. Qualsiasi modifica sarà rispecchiata dall'aggiornamento della data "Ultimo aggiornamento" in cima a questa informativa. Ti incoraggiamo a rivedere periodicamente questa informativa.</p>
+    <p>Se dovessimo apportare modifiche sostanziali alle nostre pratiche sui dati — in particolare in qualsiasi modo che coinvolga la raccolta di dati da bambini — forniremo un avviso prominente in anticipo e otterremo il consenso genitoriale verificabile ove richiesto dalla legge applicabile.</p>
+  </section>
+  <section id="it-s15"><div class="section-head"><span class="section-num">15</span><h2>Contattaci</h2></div>
+    <p>Se hai domande, dubbi o richieste riguardanti questa Informativa sulla Privacy — incluse eventuali richieste da parte di genitori o tutori — contattaci:</p>
+    <div class="contact-card">
+      <p>Il nostro obiettivo è rispondere a tutte le richieste in materia di privacy entro 30 giorni.</p>
+      <div class="contact-row"><span class="label">Email</span><a href="mailto:GLabsAI@outlook.com" class="value">GLabsAI@outlook.com</a></div>
+    </div>
+  </section>
+</main>
+</div>
 
 <footer>
   <p>Drafted to comply with Apple App Store Guidelines 1.3 &amp; 5.1.1 · COPPA · GDPR &amp; UK GDPR · Children's Code (UK) · CCPA/CPRA · LGPD · PIPEDA · and other applicable global privacy laws.</p>
   <p style="margin-top:8px;">This document is provided for informational purposes. Have this policy reviewed by a licensed attorney in your jurisdiction before publishing.</p>
 </footer>
+
+<script>
+const translationNotices = {
+  de: 'Diese Übersetzung wurde automatisch aus der englischen Originalversion erstellt und dient nur zur Information. Die englische Version ist der maßgebliche Text. Wir bitten um Entschuldigung für etwaige grammatikalische oder sprachliche Ungenauigkeiten.',
+  fr: 'Cette traduction a été générée automatiquement à partir de la version originale en anglais et est fournie à titre indicatif uniquement. La version anglaise fait foi. Nous nous excusons pour toute imprécision grammaticale ou de langage formel.',
+  pt: 'Esta tradução foi gerada automaticamente a partir da versão original em inglês e é fornecida apenas para conveniência. A versão em inglês é o texto oficial. Pedimos desculpas por qualquer imprecisão gramatical ou de linguagem formal.',
+  ko: '이 번역은 영어 원본에서 자동으로 생성되었으며 편의를 위해 제공됩니다. 영어 버전이 공식 텍스트입니다. 문법적 또는 격식 표현의 부정확함에 대해 양해 부탁드립니다.',
+  zh: '本译文由英文原版自动生成，仅供参考。英文版本为权威文本。对于任何语法或正式用语上的不准确之处，敬请谅解。',
+  es: 'Esta traducción fue generada automáticamente a partir de la versión original en inglés y se proporciona únicamente por conveniencia. La versión en inglés es el texto oficial. Pedimos disculpas por cualquier imprecisión gramatical o de lenguaje formal.',
+  ja: 'この翻訳は英語原文から自動生成されたものであり、参考目的でのみ提供されています。英語版が正式なテキストです。文法や正式な表現の不正確さについてご容赦ください。',
+  it: 'Questa traduzione è stata generata automaticamente dalla versione originale in inglese ed è fornita esclusivamente per comodità. La versione inglese è il testo ufficiale. Ci scusiamo per eventuali imprecisioni grammaticali o di linguaggio formale.'
+};
+
+const titles = {
+  en: 'Privacy Policy',
+  de: 'Datenschutzrichtlinie',
+  fr: 'Politique de Confidentialité',
+  pt: 'Política de Privacidade',
+  ko: '개인정보 처리방침',
+  zh: '隐私政策',
+  es: 'Política de Privacidad',
+  ja: 'プライバシーポリシー',
+  it: 'Informativa sulla Privacy'
+};
+
+const banners = {
+  en: '<span>We collect nothing.</span> &nbsp;We store nothing. &nbsp;We transmit nothing.',
+  de: '<span>Wir sammeln nichts.</span> &nbsp;Wir speichern nichts. &nbsp;Wir übermitteln nichts.',
+  fr: '<span>Nous ne collectons rien.</span> &nbsp;Nous ne stockons rien. &nbsp;Nous ne transmettons rien.',
+  pt: '<span>Não coletamos nada.</span> &nbsp;Não armazenamos nada. &nbsp;Não transmitimos nada.',
+  ko: '<span>아무것도 수집하지 않습니다.</span> &nbsp;아무것도 저장하지 않습니다. &nbsp;아무것도 전송하지 않습니다.',
+  zh: '<span>我们不收集任何内容。</span> &nbsp;我们不存储任何内容。 &nbsp;我们不传输任何内容。',
+  es: '<span>No recopilamos nada.</span> &nbsp;No almacenamos nada. &nbsp;No transmitimos nada.',
+  ja: '<span>何も収集しません。</span> &nbsp;何も保存しません。 &nbsp;何も送信しません。',
+  it: '<span>Non raccogliamo nulla.</span> &nbsp;Non memorizziamo nulla. &nbsp;Non trasmettiamo nulla.'
+};
+
+const updatedLabels = {
+  en: 'Last Updated: May 31, 2026',
+  de: 'Letzte Aktualisierung: 31. Mai 2026',
+  fr: 'Dernière mise à jour: 31 mai 2026',
+  pt: 'Última Atualização: 31 de maio de 2026',
+  ko: '최종 업데이트: 2026년 5월 31일',
+  zh: '最后更新：2026年5月31日',
+  es: 'Última Actualización: 31 de mayo de 2026',
+  ja: '最終更新日：2026年5月31日',
+  it: 'Ultimo aggiornamento: 31 maggio 2026'
+};
+
+const effectiveLabels = {
+  en: 'Effective: May 31, 2026',
+  de: 'Gültig ab: 31. Mai 2026',
+  fr: 'En vigueur: 31 mai 2026',
+  pt: 'Vigência: 31 de maio de 2026',
+  ko: '발효일: 2026년 5월 31일',
+  zh: '生效日期：2026年5月31日',
+  es: 'Vigente: 31 de mayo de 2026',
+  ja: '発効日：2026年5月31日',
+  it: 'In vigore: 31 maggio 2026'
+};
+
+function switchLang(lang) {
+  const notice = document.getElementById('translation-notice');
+  const noticeText = document.getElementById('translation-notice-text');
+  if (lang === 'en') {
+    notice.classList.remove('visible');
+  } else {
+    noticeText.textContent = translationNotices[lang] || '';
+    notice.classList.add('visible');
+  }
+  document.querySelectorAll('.lang-section').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.lang-btn').forEach(el => el.classList.remove('active'));
+  document.getElementById('lang-' + lang).classList.add('active');
+  document.querySelector(`[onclick="switchLang('${lang}')"]`).classList.add('active');
+  document.getElementById('header-title').textContent = titles[lang] || titles.en;
+  document.getElementById('zero-banner').innerHTML = banners[lang] || banners.en;
+  document.getElementById('pill-updated').textContent = updatedLabels[lang] || updatedLabels.en;
+  document.getElementById('pill-effective').textContent = effectiveLabels[lang] || effectiveLabels.en;
+  document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : lang;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
 
 </body>
 </html>
